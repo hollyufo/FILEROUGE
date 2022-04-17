@@ -307,3 +307,10 @@ body.dark .switch::before{
 body.dark .home .text{
     color: var(--text-color);
 }
+ul {
+    padding-left: 0px !important;
+}
+.nav-link {
+    display: block !important;
+    padding: 0px !important;
+}
