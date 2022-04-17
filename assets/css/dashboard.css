@@ -154,8 +154,8 @@ header .image-text .profession{
     transition: var(--tran-05);
 }
 
-body.dark .sidebar header .toggle{
-    color: var(--text-color);
+body.dark .sidebar header .toggle .card{
+    color: var(--text-color) !important;
 }
 
 .sidebar.close .toggle{
@@ -313,4 +313,13 @@ ul {
 .nav-link {
     display: block !important;
     padding: 0px !important;
+}
+
+.row{
+    row-gap: 20px;
+}
+.dark-cards{
+    background-color: var(--primary-color-light) !important;
+    border-radius: 6px;
+    color: #FFF;
 }

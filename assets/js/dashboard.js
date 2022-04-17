@@ -4,6 +4,8 @@ const body = document.querySelector('body'),
       searchBtn = body.querySelector(".search-box"),
       modeSwitch = body.querySelector(".toggle-switch"),
       modeText = body.querySelector(".mode-text");
+    const card = body.querySelector('.card');
+    
 
 
 toggle.addEventListener("click" , () =>{
@@ -14,8 +16,10 @@ searchBtn.addEventListener("click" , () =>{
     sidebar.classList.remove("close");
 })
 
-modeSwitch.addEventListener("click" , () =>{
+modeSwitch.addEventListener("click" , e =>{
     body.classList.toggle("dark");
+    // add class
+    card.classList.toggle("dark-cards");
     
     if(body.classList.contains("dark")){
         modeText.innerText = "Light mode";
