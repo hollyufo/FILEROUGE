@@ -7,21 +7,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-:root{
-    /* ===== Colors ===== */
-    --body-color: #E4E9F7;
-    --sidebar-color: #FFF;
-    --primary-color: #695CFE;
-    --primary-color-light: #F6F5FF;
-    --toggle-color: #DDD;
-    --text-color: #707070;
-
-    /* ====== Transition ====== */
-    --tran-03: all 0.2s ease;
-    --tran-03: all 0.3s ease;
-    --tran-04: all 0.3s ease;
-    --tran-05: all 0.3s ease;
-}
 
 body{
     min-height: 100vh;
@@ -322,4 +307,5 @@ ul {
     background-color: var(--primary-color-light) !important;
     border-radius: 6px;
     color: #FFF;
+    min-width: 200px;
 }
