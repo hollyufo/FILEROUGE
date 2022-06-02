@@ -170,19 +170,33 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form method="POST" class="" enctype="multipart/form-data">
+              <form method="POST" class="">
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label white">Project Name</label>
-                  <input type="text" class="form-control bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Project name...">
+                  <label for="exampleInputEmail1" class="form-label white">task Name</label>
+                  <input type="text" class="form-control bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Task name...">
                 </div>
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label white">Project Description</label>
-                  <input type="text" class="form-control bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Project Description...">
+                  <label for="exampleInputEmail1" class="form-label white">Explanation</label>
+                  <input type="text" class="form-control bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
                 </div>
                 <div class="mb-3">
-                  <label for="formFile" class="form-label white">upload a picture</label>
-                  <input class="form-control bg-dark" type="file" id="formFile">
-                </div>
+                    <label for="exampleInputEmail1" class="form-label white">status</label>
+                    <select class="form-select bg-dark white" aria-label="Default select example">
+                        <option selected disabled>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label white">asigned to</label>
+                    <select class="form-select bg-dark white" aria-label="Default select example">
+                        <option selected disabled>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                  </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               </form>
