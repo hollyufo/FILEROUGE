@@ -155,17 +155,28 @@
     <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal-content bg-dark">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="white" id="exampleModalLabel">ADD PROJECT</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <form method="POST" class="" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label white">Project Name</label>
+              <input type="text" class="form-control bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Project name...">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label white">Project Description</label>
+              <input type="text" class="form-control bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Project Description...">
+            </div>
+            <div class="mb-3">
+              <label for="formFile white" class="form-label">upload a picture</label>
+              <input class="form-control bg-dark" type="file" id="formFile">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </form>
         </div>
       </div>
     </div>
