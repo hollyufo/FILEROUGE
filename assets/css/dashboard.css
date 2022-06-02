@@ -339,3 +339,11 @@ body::-webkit-scrollbar {
 .border-purple{
     border-bottom: 1px solid #7064fe !important;
 }
+.mylist{
+    margin-top: 30px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
