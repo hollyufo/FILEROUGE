@@ -347,3 +347,15 @@ body::-webkit-scrollbar {
     justify-content: space-around;
     flex-wrap: wrap;
 }
+.pt2{
+    padding: 10px;
+}
+@media (min-width: 768px){
+    .pT3{
+        padding-right: 3rem !important;
+        padding-left: 3rem!important;
+    }
+    .pt2{
+        padding: 3rem !important;
+    }
+}
