@@ -15,8 +15,8 @@ body{
 }
 
 ::selection{
-    background-color: var(--primary-color);
-    color: #fff;
+    background-color: #FFF;
+    color: #7064fe;
 }
 
 body.dark{
