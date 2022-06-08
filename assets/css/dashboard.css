@@ -374,3 +374,7 @@ a {
 .dash-icon{
     font-size: 50px;
 }
+.spaser{
+    display: flex;
+    justify-content: space-between;
+}
