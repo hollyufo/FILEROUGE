@@ -21,6 +21,9 @@ Route::get('/shop-almajazer',function(){
 Route::get('/login',function(){
     return Route::controller("user","loginpage");
 });
+Route::get('/login',function(){
+    return Route::controller("user","login");
+});
 Route::post('/signup',function(){
     return Route::controller("user","addUser");
 });

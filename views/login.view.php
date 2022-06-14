@@ -28,6 +28,9 @@
   else if(isset($_GET['success'])){
     echo '<div style="text-align: center;" class="success">You have successfully registered</div>';
   }
+  elseif(isset($_GET['errorlogin'])){
+    echo '<div style="text-align: center;" class="errors">Email or Password is wrong</div>';
+  }
   ?>
     <div class="user_options-container">
       <div class="user_options-text">
@@ -48,7 +51,7 @@
       <div class="user_options-forms" id="user_options-forms">
         <div class="user_forms-login">
           <h2 class="forms_title">Login</h2>
-          <form class="forms_form" action="" method="post">
+          <form class="forms_form" action="/login" method="post">
             
               <div class="forms_field">
                 <input type="email" placeholder="Email" name="email" class="forms_field-input" required autofocus />

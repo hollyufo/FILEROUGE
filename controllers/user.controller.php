@@ -19,7 +19,7 @@ class userController extends controller{
         if($userdata){
             redirect('/dashboard');
         }else{
-            redirect('/login?error=1');
+            redirect('/login?errorlogin=1');
         }
         //var_dump($_SESSION);
         //var_dump($userdata);
