@@ -6,12 +6,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel="stylesheet" href="./assets/css/style.css">
+<link rel="stylesheet" href="./views/assets/css/style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png">
-    <link rel="manifest" href="./assets/img/site.webmanifest">
+    <link rel="manifest" href="./views/assets/img/site.webmanifest">
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -40,18 +40,18 @@
       <div class="user_options-forms" id="user_options-forms">
         <div class="user_forms-login">
           <h2 class="forms_title">Login</h2>
-          <form class="forms_form">
+          <form class="forms_form" action="" method="post">
             
               <div class="forms_field">
-                <input type="email" placeholder="Email" class="forms_field-input" required autofocus />
+                <input type="email" placeholder="Email" name="email" class="forms_field-input" required autofocus />
               </div>
               <div class="forms_field">
-                <input type="password" placeholder="Password" class="forms_field-input" required />
+                <input type="password" placeholder="Password" name="password" class="forms_field-input" required />
               </div>
             
             <div class="forms_buttons">
               <button type="button" class="forms_buttons-forgot">Forgot password?</button>
-              <input type="submit" value="Log In" class="forms_buttons-action">
+              <input type="submit" value="Log-In" class="forms_buttons-action">
             </div>
           </form>
         </div>
@@ -80,7 +80,7 @@
   </section>
 </div>
 <!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./assets/js/script.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./views/assets/js/script.js"></script>
 
 </body>
 </html>

@@ -12,7 +12,7 @@
     <meta property="og:image" content="https://imranechaibi.com/website.PNG" />
     <meta property="og:description" content="Hey! It's Imrane Chaibi and I'm a Full Stack Web Developer located in Rabat morocco. I've done remote projects for agencies, and collaborated with talented people to create digital products for both business and consumer use...." />
 
-    <link rel="stylesheet" href="assets/css/portfolio.css" />
+    <link rel="stylesheet" href="views/assets/css/portfolio.css" />
     
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
@@ -32,8 +32,8 @@
         <div class="header__logo-container">
           <div class="header__logo-img-cont">
             <img
-              src="assets/img/unknown.png"
-              alt="Ram Maheshwari Logo Image"
+              src="views/assets/img/unknown.png"
+              alt="imrnae Logo Image"
               class="header__logo-img"
             />
           </div>
@@ -106,7 +106,7 @@
         <div class="home-hero__social">
           <a href="https://www.linkedin.com/in/imrane-chaibi-118a55204/" class="home-hero__social-icon-link">
             <img
-              src="./assets/img/linkedin-ico.png"
+              src="./views/assets/img/linkedin-ico.png"
               alt="icon"
               class="home-hero__social-icon"
             />
@@ -115,7 +115,7 @@
         <div class="home-hero__social">
           <a href="#" class="home-hero__social-icon-link">
             <img
-              src="./assets/img/github-ico.png"
+              src="./views/assets/img/github-ico.png"
               alt="icon"
               class="home-hero__social-icon"
             />
@@ -124,7 +124,7 @@
         <div class="home-hero__social">
           <a href="https://twitter.com/ChaibiImrane" class="home-hero__social-icon-link">
             <img
-              src="./assets/img/twitter-ico.png"
+              src="./views/assets/img/twitter-ico.png"
               alt="icon"
               class="home-hero__social-icon"
             />
@@ -136,7 +136,7 @@
             class="home-hero__social-icon-link home-hero__social-icon-link--bd-none"
           >
             <img
-              src="./assets/img/insta-ico.png"
+              src="./views/assets/img/insta-ico.png"
               alt="icon"
               class="home-hero__social-icon"
             />
@@ -192,7 +192,9 @@
               <div class="skills__skill">GIT</div>
               <div class="skills__skill">Wordpress</div>
               <div class="skills__skill">Google ADS</div>
-              <div class="skills__skill">Facebook Ads</div>
+              <div class="skills__skill">Facebook Ads</div> 
+              <div class="skills__skill">Laravel</div>
+              <div class="skills__skill">Adobe Xd</div>
             </div>
           </div>
         </div>
@@ -211,7 +213,7 @@
           <div class="projects__row">
             <div class="projects__row-img-cont">
               <img
-                src="./assets/img/almajazer.png"
+                src="./views/assets/img/almajazer.png"
                 alt="Software Screenshot"
                 class="projects__row-img"
                 loading="lazy"
@@ -232,7 +234,7 @@
           <div class="projects__row">
             <div class="projects__row-img-cont">
               <img
-                src="./assets/img/virtualprovision.png"
+                src="./views/assets/img/virtualprovision.png"
                 alt="Software Screenshot"
                 class="projects__row-img"
                 loading="lazy"
@@ -253,7 +255,7 @@
           <div class="projects__row">
             <div class="projects__row-img-cont">
               <img
-                src="./assets/img/shop-almajazer.png"
+                src="./views/assets/img/shop-almajazer.png"
                 alt="Software Screenshot"
                 class="projects__row-img"
                 loading="lazy"
@@ -337,21 +339,21 @@
               <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/imrane-chaibi-118a55204/">
                 <img
                   class="main-footer__icon"
-                  src="./assets/img/linkedin-ico.png"
+                  src="./views/assets/img/linkedin-ico.png"
                   alt="icon"
                 />
               </a>
               <a target="_blank" rel="noreferrer" href="https://github.com/hollyufo">
                 <img
                   class="main-footer__icon"
-                  src="./assets/img/github-ico.png"
+                  src="./views/assets/img/github-ico.png"
                   alt="icon"
                 />
               </a>
               <a target="_blank" rel="noreferrer" href="https://twitter.com/ChaibiImrane">
                 <img
                   class="main-footer__icon"
-                  src="./assets/img/twitter-ico.png"
+                  src="./views/assets/img/twitter-ico.png"
                   alt="icon"
                 />
               </a>
@@ -359,7 +361,7 @@
               <a target="_blank" rel="noreferrer" href="https://www.instagram.com/imran_chaibi/">
                 <img
                   class="main-footer__icon main-footer__icon--mr-none"
-                  src="./assets/img/insta-ico.png"
+                  src="./views/assets/img/insta-ico.png"
                   alt="icon"
                 />
               </a>

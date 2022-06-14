@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Case Study of Al Majazer Market</title>
+    <title>Case Study of Project 3</title>
     <meta name="description" content="Case study page of Project" />
 
-    <link rel="stylesheet" href="./assets/css/proect.css" />
+    <link rel="stylesheet" href="./views/assets/css/proect.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,7 +22,7 @@
         <div class="header__logo-container">
           <div class="header__logo-img-cont">
             <img
-              src="./assets/img/unknown.png"
+              src="./views/assets/img/unknown.png"
               alt="Ram Maheshwari Logo Image"
               class="header__logo-img"
             />
@@ -48,12 +48,12 @@
           </ul>
           <div class="header__main-ham-menu-cont">
             <img
-              src="./assets/img/ham-menu.svg"
+              src="./views//assets/img/ham-menu.svg"
               alt="hamburger menu"
               class="header__main-ham-menu"
             />
-            <img 
-              src="./assets/img/ham-menu-close.svg"
+            <img
+              src="./views/assets/img/ham-menu-close.svg"
               alt="hamburger menu close"
               class="header__main-ham-menu-close d-none"
             />
@@ -84,14 +84,14 @@
     </header>
     <section class="project-cs-hero">
       <div class="project-cs-hero__content">
-        <h1 class="heading-primary">Al Majazer Market</h1>
+        <h1 class="heading-primary">E-commerce website for Al Majazer Market</h1>
         <div class="project-cs-hero__info">
           <p class="text-primary">
-            al majazer market  needed a website to present itself as a new modern way, and also help promote its products to attract more customers and businesses.
+            al majaz needs a website where it can sell and have special offers with different payment method
           </p>
         </div>
         <div class="project-cs-hero__cta">
-          <a href="https://almajazer.com/" class="btn btn--bg" target="_blank">Live Link</a>
+          <a href="https://shop.almajazer.com/" class="btn btn--bg" target="_blank">Live Link</a>
         </div>
       </div>
     </section>
@@ -100,7 +100,7 @@
         <div class="project-details__content">
           <div class="project-details__showcase-img-cont">
             <img
-              src="./assets/img/almajazer.png"
+              src="./views/assets/img/shop-almajazer.png"
               alt="Project Image"
               class="project-details__showcase-img"
             />
@@ -109,10 +109,10 @@
             <div class="project-details__desc">
               <h3 class="project-details__content-title">Project Overview</h3>
               <p class="project-details__desc-para">
-                al majazer market needed a website to present itself in a new modern way, and also help promote its products to attract more customers and businesses. the customer insisted the site must be simple and easy to use and to give information about the company its team and brief presentation.
+                my customer needed a website to manage sales online delivery and offers also an easy admin interface to make it easy for the employee to add new offers delete or update  
               </p>
               <p class="project-details__desc-para">
-                the site needed to be responsive and elegant and make it easy for a new customer to contact or ask for information  
+                plus added easy interface for the user to see the latest offers and also make it easy to track delivery process in real-time 
               </p>
             </div>
             <div class="project-details__tools-used">
@@ -121,23 +121,25 @@
                 <div class="skills__skill">HTML</div>
                 <div class="skills__skill">CSS</div>
                 <div class="skills__skill">JavaScript</div>
-                <div class="skills__skill">Jquery</div>
+                <div class="skills__skill">Less</div>
                 <div class="skills__skill">SASS</div>
                 <div class="skills__skill">GIT</div>
-                <div class="skills__skill">Bootstrap</div>
-                <div class="skills__skill">Google ADS</div>
+                <div class="skills__skill">PHP</div>
+                <div class="skills__skill">MYSQL</div>
                 <div class="skills__skill">Adobe XD</div>
                 <div class="skills__skill">Photoshop</div>
+                <div class="skills__skill">Bootstrap</div>
               </div>
             </div>
             <div class="project-details__links">
               <h3 class="project-details__content-title">See Live</h3>
               <a
-                href="https://almajazer.com/"
+                href="https://shop.almajazer.com/"
                 class="btn btn--med btn--theme project-details__links-btn"
                 target="_blank"
                 >Live Link</a
               >
+
             </div>
           </div>
         </div>
@@ -154,21 +156,21 @@
               <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/imrane-chaibi-118a55204/">
                 <img
                   class="main-footer__icon"
-                  src="./assets/img/linkedin-ico.png"
+                  src="./views/assets/img/linkedin-ico.png"
                   alt="icon"
                 />
               </a>
               <a target="_blank" rel="noreferrer" href="https://github.com/hollyufo">
                 <img
                   class="main-footer__icon"
-                  src="./assets/img/github-ico.png"
+                  src="./views/assets/img/github-ico.png"
                   alt="icon"
                 />
               </a>
               <a target="_blank" rel="noreferrer" href="https://twitter.com/ChaibiImrane">
                 <img
                   class="main-footer__icon"
-                  src="./assets/img/twitter-ico.png"
+                  src="./views/assets/img/twitter-ico.png"
                   alt="icon"
                 />
               </a>
@@ -176,7 +178,7 @@
               <a target="_blank" rel="noreferrer" href="https://www.instagram.com/imran_chaibi/">
                 <img
                   class="main-footer__icon main-footer__icon--mr-none"
-                  src="./assets/img/insta-ico.png"
+                  src="./views/assets/img/insta-ico.png"
                   alt="icon"
                 />
               </a>
@@ -191,11 +193,10 @@
         </div>
 
         <div class="main-footer__lower">
-          &copy; Copyright 2021. Made with love.
-          >
+          &copy; Copyright 2021. Made with love
         </div>
       </div>
     </footer>
-    <script src="./assets/js/index.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>
