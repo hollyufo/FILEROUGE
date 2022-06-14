@@ -412,3 +412,21 @@ input::placeholder {
     padding: 50px 45px;
   }
 }
+.errors{
+  text-align: center;
+    color: #9d4054;
+    position: absolute;
+    top: 66px;
+    background: #f7d7da;
+    padding: 20px 80px 20px 70px;
+    border-radius: 15px;
+}
+.success{
+    text-align: center;
+    color: #9d4054;
+    position: absolute;
+    top: 66px;
+    background: #dff0d8;
+    padding: 20px 80px 20px 70px;
+    border-radius: 15px;
+}

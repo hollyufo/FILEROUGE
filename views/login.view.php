@@ -21,6 +21,14 @@
 <div id='stars3'></div>
 <div id='title'>
   <section class="user">
+  <?php
+  if(isset($_GET['error'])){
+    echo '<div style="text-align: center;" class="errors">Invite Code is wrong</div>';
+  }
+  else if(isset($_GET['success'])){
+    echo '<div style="text-align: center;" class="success">You have successfully registered</div>';
+  }
+  ?>
     <div class="user_options-container">
       <div class="user_options-text">
         <div class="user_options-unregistered">
