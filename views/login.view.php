@@ -57,18 +57,18 @@
         </div>
         <div class="user_forms-signup">
           <h2 class="forms_title">Sign Up</h2>
-          <form class="forms_form">
+          <form class="forms_form" method="post" action="./signup">
               <div class="forms_field">
-                <input type="text" placeholder="invite number" class="forms_field-input" required />
+                <input type="text" placeholder="invite number" name="code" class="forms_field-input" required />
               </div>
               <div class="forms_field">
-                <input type="text" placeholder="Full Name" class="forms_field-input" required />
+                <input type="text" placeholder="Full Name" name="fullname" class="forms_field-input" required />
               </div>
               <div class="forms_field">
-                <input type="email" placeholder="Email" class="forms_field-input" required />
+                <input type="email" placeholder="Email" name="email" class="forms_field-input" required />
               </div>
               <div class="forms_field">
-                <input type="password" placeholder="Password" class="forms_field-input" required />
+                <input type="password" placeholder="Password" name="password" class="forms_field-input" required />
               </div>
             <div class="forms_buttons">
               <input type="submit" value="Sign up" class="forms_buttons-action">

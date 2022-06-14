@@ -32,23 +32,14 @@ class userController extends controller{
     // add user to the database
     public function addUser(){
         $user = new user();
-        $user->addUser($_POST['username'], $_POST['email'], password_hash($_POST['password'], PASSWORD_DEFAULT), $_POST['role'], $_POST['matricule']);
-        redirect('/admin');
-    }
-    // get all users
-    public function getUsers(){
-        $user = new user();
-        $users = $user->getUsers();
-        return Route::view("admin", $users);
-        //return $users;
-    }
-    // delete user
-    public function deleteUser($id){
-        $user = new user();
-        $data = array(
-            "id" => $id
-        );
-        $user->deleteUser($data['id']);
-        redirect('/admin');
+        $date = date("Y/m/d");
+        $role = "user";
+        // checking acces code 
+        if($user->checkCode($_POST['code'])){
+            $user->addUser($_POST['fullname'], $_POST['email'], password_hash($_POST['password'], PASSWORD_DEFAULT), $role, $date, $_POST['code']);
+            redirect('/login?success=1');
+        }else{
+            redirect('/login?error=code');
+        }
     }
 }   

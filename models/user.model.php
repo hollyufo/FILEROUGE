@@ -24,9 +24,29 @@ class user extends Model{
             return false;
         }
     }
+    // check access code
+    public function checkCode($code){
+        $sql = "SELECT * FROM invitecode WHERE code = '$code'";
+        $result = $this->con->query($sql);
+        if($result->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
     // add user to the database
-    public function addUser($fullname, $email, $password, $role, $matricule){
-        // checking if code exists);
-
+    public function addUser($fullname, $email, $password, $role, $dates, $code){
+        
+            // check if email already exists
+            $sql = "SELECT * FROM users WHERE email = '$email'";
+            $result = $this->con->query($sql);
+            if($result->rowCount() > 0){
+                redirect('/login?emailexists=1');
+            }else{
+                $sql = "INSERT INTO users VALUES (NULL, '$fullname', '$email', '$password', '$dates' ,'$role', NULL)";
+                $this->con->query($sql);
+                return true;
+            }
+        
     }
 }
