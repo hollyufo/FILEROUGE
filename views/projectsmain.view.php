@@ -141,11 +141,11 @@
           <form method="POST" class="" enctype="multipart/form-data">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label white">Project Name</label>
-              <input type="text" class="form-control bg-dark" id="exampleInputEmail1" name="ProjectName" aria-describedby="emailHelp" placeholder="Project name...">
+              <input type="text" class="form-control white bg-dark" id="exampleInputEmail1" name="ProjectName" aria-describedby="emailHelp" placeholder="Project name...">
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label white">Project Description</label>
-              <input type="text" class="form-control bg-dark" name="description" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Project Description...">
+              <input type="text" class="form-control white bg-dark" name="description" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Project Description...">
             </div>
             <div class="mb-3">
               <label for="formFile" class="form-label white">upload a picture</label>
