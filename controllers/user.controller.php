@@ -13,13 +13,13 @@ class userController extends controller{
     }
     // the function we were called from the route
     public function login(){
-        // calling login method from the model
+        // calling User method from the model
         $user = new user();
         $userdata = $user->verifyUser($_POST['email'], $_POST['password']);
         if($userdata){
             redirect('/dashboard');
         }else{
-            redirect('/login?errorlogin=1');
+            redirect('/login?wrongcredantials=1');
         }
         //var_dump($_SESSION);
         //var_dump($userdata);

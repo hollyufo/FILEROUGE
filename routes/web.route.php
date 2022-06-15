@@ -21,9 +21,15 @@ Route::get('/shop-almajazer',function(){
 Route::get('/login',function(){
     return Route::controller("user","loginpage");
 });
-Route::get('/login',function(){
+Route::post('/login',function(){
     return Route::controller("user","login");
 });
 Route::post('/signup',function(){
     return Route::controller("user","addUser");
 });
+// logout rout
+Route::get('/logout',function(){
+    return Route::controller("user","logout");
+});
+//====================================================== end of login =======================================================================================
+//====================================================== start of admin =======================================================================================
