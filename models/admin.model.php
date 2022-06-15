@@ -16,5 +16,19 @@ class admin extends Model{
             // returning the data
             return $data;
         }
+        
+    }
+    // creating a new project with 3 parameters
+    public function createProject($projectname, $description, $img){
+        // sql query
+        $sql = "INSERT INTO project VALUES (NULL, '$projectname', '$description', '$img')";
+        // getting the result as a associative array
+        $result = $this->con->query($sql);
+        // if there is a result
+        if($result){
+            // returning the data
+            return true;
+        }
+        
     }
 }

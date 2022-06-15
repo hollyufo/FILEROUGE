@@ -141,17 +141,17 @@
           <form method="POST" class="" enctype="multipart/form-data">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label white">Project Name</label>
-              <input type="text" class="form-control bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Project name...">
+              <input type="text" class="form-control bg-dark" id="exampleInputEmail1" name="ProjectName" aria-describedby="emailHelp" placeholder="Project name...">
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label white">Project Description</label>
-              <input type="text" class="form-control bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Project Description...">
+              <input type="text" class="form-control bg-dark" name="description" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Project Description...">
             </div>
             <div class="mb-3">
               <label for="formFile" class="form-label white">upload a picture</label>
-              <input class="form-control bg-dark" type="file" id="formFile">
+              <input class="form-control bg-dark" type="file" name="fileToUpload" id="fileToUpload">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           </form>
         </div>

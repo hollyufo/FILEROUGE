@@ -43,3 +43,7 @@ Route::get('/dashboard',function(){
 Route::get('/projects',function(){
     return Route::controller("admin","projects");
 });
+// creating a new project
+Route::post('/projects',function(){
+    return Route::controller("admin","newProject");
+});
