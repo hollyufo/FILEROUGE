@@ -14,7 +14,8 @@ class user extends Model{
             if(password_verify($password, $row['password'])){
                 $_SESSION['useremail'] = $useremail;
                 $_SESSION['userid'] = $row['userid'];
-                $_SESSION['username'] = $row['Fullname'];
+                $_SESSION['username'] = $row['FullName'];
+                $_SESSION['userrole'] = $row['roll'];
                 $_SESSION['loggedin'] = true;
                 return true;
             }else{  

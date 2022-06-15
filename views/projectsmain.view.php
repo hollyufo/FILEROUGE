@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="./assets/css/dashboard.css">
+    <link rel="stylesheet" href="./views/assets/css/dashboard.css">
     
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -19,12 +19,12 @@
     <header>
         <div class="image-text">
             <span class="image">
-                <img src="logo.png" alt="">
+                <img src="./views/assets/img/unknown.png" alt="">
             </span>
-
+              
             <div class="text logo-text">
-                <span class="name">Imrane Chaibi</span>
-                <span class="profession">Web developer</span>
+                <span class="name"> <?php echo $_SESSION['username'] ?> </span>
+                <span class="profession"><?php echo $_SESSION['userrole'] ?></span>
             </div>
         </div>
 
@@ -104,46 +104,23 @@
         </div>
         <div class="container-fluid ps-5 pe-5">
             <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
-                  <div class="card h-100 dark-cards">
-                    <img src="./assets/img/placeholder.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      <a href="#" class="btn btn-dark border border-light">Go somewhere</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 dark-cards">
-                      <img src="./assets/img/placeholder.png" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <a href="#" class="btn btn-dark border border-light">Go somewhere</a>
+              <?php 
+                // looping through the projects
+                foreach($data as $project){
+                    echo '
+                    <div class="col">
+                      <div class="card h-100 dark-cards">
+                        <img src="./views/assets/img/placeholder.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">'.$project['name'].'</h5>
+                          <p class="card-text">'.$project['discription'].'.</p>
+                          <a href="/projects/'.$project['projectid'].'" class="btn btn-dark border border-light">more details</a>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="col">
-                    <div class="card h-100 dark-cards">
-                      <img src="./assets/img/placeholder.png" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <a href="#" class="btn btn-dark border border-light">Go somewhere</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card h-100 dark-cards">
-                      <img src="./assets/img/placeholder.png" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <a href="#" class="btn btn-dark border border-light">Go somewhere</a>
-                      </div>
-                    </div>
-                  </div>
+                    ';
+                  }
+              ?>
               </div>
         </div>
     </section>
@@ -181,7 +158,7 @@
       </div>
     </div>
 </div>
-    <script src="./assets/js/dashboard.js"></script>
+    <script src="./views/assets/js/dashboard.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>

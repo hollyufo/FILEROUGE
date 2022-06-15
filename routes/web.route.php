@@ -37,3 +37,9 @@ Route::get('/logout',function(){
 Route::get('/dashboard',function(){
     return Route::controller("admin","dashboard");
 });
+//====================================================== end of admin =======================================================================================
+//====================================================== start of project =======================================================================================
+// routes for projects
+Route::get('/projects',function(){
+    return Route::controller("admin","projects");
+});
