@@ -81,5 +81,24 @@ class adminController extends controller{
         // returning the view with the data
         return $this->view("edittask", $data);
     }
+    // updating a task
+    public function updatingTask1(){
+        // updating the task
+        $projects = new admin();
+        $data = $projects->updatingTask($_POST['taskid'], $_POST['explanation'], $_POST['Status'], $_POST['asignedto'], $_POST['startdate'], $_POST['enddate'], $_POST['taskname']);
+        redirect('/projects/'.$_POST['project']);
+    }
+    // deleting a task
+    public function deleteTask($id, $projectid){
+        $data = array (
+            "id" => $id,
+            "projectid" => $projectid
+        );
+        $projectid = $data['projectid'];
+        // deleting the task
+        $projects = new admin();
+        $data = $projects->deleteTask($data['id']); 
+        redirect('/projects/'.$projectid);
+    }
 
 }   

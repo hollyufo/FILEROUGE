@@ -120,9 +120,9 @@ class admin extends Model{
         
     }
     // editing task
-    public function editTask($id , $description , $status , $asignedto , $startdate , $enddate , $project , $taskname){
+    public function updatingTask($id , $description , $status , $asignedto , $startdate , $enddate , $taskname){
         // sql query
-        $sql = "UPDATE task SET explanation = '$description' , status = '$status' , asignedto = '$asignedto' , startdate = '$startdate' , enddate = '$enddate' , project = '$project' , taskname = '$taskname' WHERE taskid = $id";
+        $sql = "UPDATE task SET explanation = '$description' , status = '$status' , asignedto = '$asignedto' , startdate = '$startdate' , enddate = '$enddate' , taskname = '$taskname' WHERE taskid = $id";
         // getting the result as a associative array
         $result = $this->con->query($sql);
         // if there is a result
@@ -130,6 +130,17 @@ class admin extends Model{
             // returning the data
             return true;
         }
-        
+    }
+    // deleting task
+    public function deleteTask($id){
+        // sql query
+        $sql = "DELETE FROM task WHERE taskid = $id";
+        // getting the result as a associative array
+        $result = $this->con->query($sql);
+        // if there is a result
+        if($result){
+            // returning the data
+            return true;
+        }
     }
 }

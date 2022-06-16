@@ -103,22 +103,23 @@
         </div>
         <div class="container-fluid pT3">
             <div class="task">
-                <form method="POST" class="">
+                <form method="POST" class="" action="../update-task">
                     <div class="mb-3">
-                        <input type="text" hidden value=<?php $task = $data['onetask'][0];  echo $task['taskid'] ?>>
+                        <input type="text" name="taskid" hidden value="<?php $task = $data['onetask'][0];  echo $task['taskid']; ?>">
+                        <input type="text" name="project" hidden value="<?php echo $task['project']; ?>">
                       <label for="exampleInputEmail1" class="form-label white">Task Name</label>
-                      <input type="text" class="form-control white bg-dark" id="exampleInputEmail1" value="<?php echo $task['taskname']; ?>" aria-describedby="emailHelp" placeholder="Task name...">
+                      <input type="text" class="form-control white bg-dark" id="exampleInputEmail1" name="taskname" value="<?php echo $task['taskname']; ?>" aria-describedby="emailHelp" placeholder="Task name...">
                     </div>
                     <?php
   
                     ?>
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label white">Explanation</label>
-                      <input type="text" class="form-control white bg-dark" value="<?php echo $task['explanation']; ?>" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
+                      <input type="text" class="form-control white bg-dark" name="explanation" value="<?php echo $task['explanation']; ?>" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label white">status</label>
-                        <select class="form-select bg-dark white" aria-label="Default select example">
+                        <select class="form-select bg-dark white" name="Status" aria-label="Default select example">
                             <?php echo '<option selected value="'.$task['Status'].'">'.$task['Status'].'</option>'; ?>
                             <option value="To do">To do</option>
                             <option value="Doing">Doing</option>
@@ -127,7 +128,7 @@
                       </div>
                       <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label white">Asigned to</label>
-                        <select class="form-select bg-dark white" aria-label="Default select example">
+                        <select name="asignedto" class="form-select bg-dark white" aria-label="Default select example">
                         <?php
                                 echo '<option selected value='.$task['userid'].' >'.$task['FullName'].'</option>';
                                 foreach ($data['users'] as $user) {
@@ -138,11 +139,11 @@
                       </div>
                       <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label white">Date of start</label>
-                        <input type="date" value="<?php $newDate = date("Y-m-d", strtotime($task['startdate'])); echo $newDate; ?>" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
+                        <input type="date" name="startdate" value="<?php $newDate = date("Y-m-d", strtotime($task['startdate'])); echo $newDate; ?>" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
                       </div>
                       <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label white">Date of end</label>
-                        <input type="date" value="<?php $newDate = date("Y-m-d", strtotime($task['enddate'])); echo $newDate; ?>" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
+                        <input type="date" name="enddate" value="<?php $newDate = date("Y-m-d", strtotime($task['enddate'])); echo $newDate; ?>" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
                       </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

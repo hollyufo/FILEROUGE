@@ -144,12 +144,13 @@
                                   echo "<td>".$task['FullName']."</td>";
                                   echo "<td>".$task['startdate']."</td>";
                                   echo "<td>".$task['enddate']."</td>";
-                                  echo '<td> <a href=""><i class="bx bx-pencil"></i></a> <a href=""><i class="bx bx-trash" ></i></a> </td>';
+                                  echo '<td> <a href="./edit-task/'.$task['taskid'].'"><i class="bx bx-pencil"></i></a> <a href="./delete-task/'.$task['taskid'].'/'.$data[0]['projectid'].'"><i class="bx bx-trash" ></i></a> </td>';
                                   echo '<td><form  method="POST" action="./task-finished">
                                             <input hidden name="taskid" value="'.$task['taskid'].'">
                                             <input hidden name="projectid" value="'.$data[0]['projectid'].'">
                                             <button type="submit" name="submit"><i class="bx bx-check"></i></button>
-                                        </form></td>';
+                                        </form>
+                                        </td>';
                                   echo "</tr>";
                                 }
                         }

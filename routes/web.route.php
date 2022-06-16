@@ -63,3 +63,11 @@ Route::post('/projects/task-finished',function(){
 Route::get('/projects/edit-task/{id}',function($id){
     return Route::controller("admin","editTask");
 });
+// route to update a task
+Route::post('/projects/update-task',function(){
+    return Route::controller("admin","updatingTask1");
+});
+// route to delete a task
+Route::get('/projects/delete-task/{id}/{projectid}',function($id, $projectid){
+    return Route::controller("admin","deleteTask");
+});
