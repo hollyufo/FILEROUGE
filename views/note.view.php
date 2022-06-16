@@ -1,4 +1,3 @@
-<!-- Coding by CodingLab | www.codinglabweb.com -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="./assets/css/dashboard.css">
+    <link rel="stylesheet" href="./views/assets/css/dashboard.css">
     
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -19,7 +18,7 @@
     <header>
         <div class="image-text">
             <span class="image">
-                <img src="logo.png" alt="userpic">
+                <img src="./views/assets/img/unknown.png" alt="userpic">
             </span>
 
             <div class="text logo-text">
@@ -110,60 +109,22 @@
     </div>
     <div class="container-fluid ps-5 pe-5">
         <div class="notes">
-            <div class="col">
-                <div class="card dark-cards mb-3 h-100" style="max-width: 18rem;">
-                    <div class="card-header spaser"><a href="./editnote" class="btn btn-dark border border-light">Edit</a> <a href="delete" class="btn btn-dark border border-light">Delete</a></div>
-                    <div class="card-body">
-                      <h5 class="card-title">Dark card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card dark-cards mb-3 h-100" style="max-width: 18rem;">
-                    <div class="card-header spaser"><a href="./editnote" class="btn btn-dark border border-light">Edit</a> <a href="delete" class="btn btn-dark border border-light">Delete</a></div>
-                    <div class="card-body">
-                      <h5 class="card-title">Dark card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div> 
-            <div class="col">
-                <div class="card dark-cards mb-3 h-100" style="max-width: 18rem;">
-                    <div class="card-header spaser"><a href="./editnote" class="btn btn-dark border border-light">Edit</a> <a href="delete" class="btn btn-dark border border-light">Delete</a></div>
-                    <div class="card-body">
-                      <h5 class="card-title">Dark card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card dark-cards mb-3 h-100" style="max-width: 18rem;">
-                    <div class="card-header spaser"><a href="./editnote" class="btn btn-dark border border-light">Edit</a> <a href="delete" class="btn btn-dark border border-light">Delete</a></div>
-                    <div class="card-body">
-                      <h5 class="card-title">Dark card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card dark-cards mb-3 h-100" style="max-width: 18rem;">
-                    <div class="card-header spaser"><a href="./editnote" class="btn btn-dark border border-light">Edit</a> <a href="delete" class="btn btn-dark border border-light">Delete</a></div>
-                    <div class="card-body">
-                      <h5 class="card-title">Dark card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card dark-cards mb-3 h-100" style="max-width: 18rem;">
-                    <div class="card-header spaser"><a href="./editnote" class="btn btn-dark border border-light">Edit</a> <a href="delete" class="btn btn-dark border border-light">Delete</a></div>
-                    <div class="card-body">
-                      <h5 class="card-title">Dark card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>    
+            <?php 
+                // printing the data sent from the controller
+                foreach($data as $note){
+                    echo'
+                            <div class="col">
+                            <div class="card dark-cards mb-3 h-100" style="max-width: 18rem;">
+                                <div class="card-header spaser"><a href="./editnote" class="btn btn-dark border border-light">Edit</a> <a href="./notes/delete/'.$note['noteid'].'" class="btn btn-dark border border-light">Delete</a></div>
+                                <div class="card-body">
+                                <h5 class="card-title">'.$note['notename'].'</h5>
+                                <p class="card-text">'.$note['notebody'].'.</p>
+                                </div>
+                            </div>
+                        </div>
+                    ';
+                }
+            ?>
         </div>
 </section>
 
@@ -193,7 +154,7 @@
             </div>
         </div>
 
-    <script src="./assets/js/dashboard.js"></script>
+    <script src="./views/assets/js/dashboard.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>

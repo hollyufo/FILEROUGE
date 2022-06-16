@@ -95,3 +95,13 @@ Route::post('/revenue/edit-revenue',function(){
     return Route::controller("revenue","updateRevnue");
     
 });
+//====================================================== end of revenue =======================================================================================
+//====================================================== start of notes =======================================================================================
+// route to get the notes
+Route::get('/notes',function(){
+    return Route::controller("note","getNotes");
+});
+// route to delete a note
+Route::get('/notes/delete/{id}',function($id){
+    return Route::controller("note","deleteNote");
+});
