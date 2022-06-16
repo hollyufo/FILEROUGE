@@ -47,7 +47,18 @@ class adminController extends controller{
         $tasks = $projects->getTasks($ide);
         // ading values to the data array
         $data['tasks'] = $tasks;
+        // getting all the users from the data base
+        $users = new admin();
+        $data['users'] = $users->getUsers();
         // returning the view with the data
         return $this->view("projects", $data);
+    }
+    // creating a new task
+    public function newTask(){
+        // Creating a new task
+        $projects = new admin();
+        $data = $projects->createTask($_POST['explanation'], $_POST['status'], $_POST['asignedto'], $_POST['startdate'], $_POST['enddate'], $_POST['project'], $_POST['taskname']);
+        redirect('/project/'.$_POST['project']);
+
     }
 }   

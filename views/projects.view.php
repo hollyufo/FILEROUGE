@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php var_dump($data['tasks']) ?>
+    <?php var_dump($data['users']) ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -138,15 +138,15 @@
                           echo "<td>".$task['FullName']."</td>";
                           echo "<td>".$task['startdate']."</td>";
                           echo "<td>".$task['enddate']."</td>";
-                          echo '<td><i class="bx bx-pencil"></i> <i class="bx bx-trash" ></i></td>';
+                          echo '<td> <a href=""><i class="bx bx-pencil"></i></a> <a href=""><i class="bx bx-trash" ></i></a> </td>';
                           echo '<td><form action="">
                                     <input hidden name="checkbox" value="'.$task['taskid'].'">
-                                    <button class="btn btn-dark" type="submit" name="done"><i class="bx bx-check"></i></button>
+                                    <a class="" type="submit" name="done"><i class="bx bx-check"></i></a>
                                 </form></td>';
                           echo "</tr>";
                         }
                       ?>
-
+                      
                     </tr>
                   <tbody>
                 </table>
@@ -171,38 +171,41 @@
               <form method="POST" class="">
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label white">Task Name</label>
-                  <input type="text" class="form-control bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Task name...">
+                  <input type="text" class="form-control bg-dark" name="taskname" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Task name...">
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label white">Explanation</label>
-                  <input type="text" class="form-control bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
+                  <input type="text" name="explanation" class="form-control bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label white">status</label>
-                    <select class="form-select bg-dark white" aria-label="Default select example">
+                    <select class="form-select bg-dark white" name="status" aria-label="Default select example">
                         <option selected disabled>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="To do">To do</option>
+                        <option value="Doing">Doing</option>
+                        <option value="Done">Done</option>
                       </select>
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label white">Asigned to</label>
-                    <select class="form-select bg-dark white" aria-label="Default select example">
+                    <select class="form-select bg-dark white" name="asignedto" aria-label="Default select example">
                         <option selected disabled>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <?php 
+                          foreach ($data['users'] as $user) {
+                            echo "<option value='".$user['id']."'>".$user['FullName']."</option>";
+                          }
+                        ?>
                       </select>
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label white">Date of start</label>
-                    <input type="date" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
+                    <input type="date" name="startdate" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label white">Date of end</label>
-                    <input type="date" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
+                    <input type="date" name="enddate" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
                   </div>
+                  <input type="text" name="project" hidden value=<?php echo $data['0']['projectid']; ?>>
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               </form>

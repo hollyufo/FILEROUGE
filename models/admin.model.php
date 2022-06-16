@@ -61,4 +61,32 @@ class admin extends Model{
         }
         
     }
+    // creating a new task with 4 parameters
+    public function createTask($taskname ,$description, $status , $asignedto, $project, $startdate, $enddate){
+        // sql query
+        $sql = "INSERT INTO task VALUES (NULL,  '$description', '$status' ,'$asignedto' , '$startdate', '$enddate', '$project','$taskname',)";
+        // getting the result as a associative array
+        $result = $this->con->query($sql);
+        // if there is a result
+        if($result){
+            // returning the data
+            return true;
+        }
+        
+    }
+    // getting all the users from db and returning them as an associative array
+    public function getUsers(){
+        // sql query
+        $sql = "SELECT * FROM users";
+        // getting the result as a associative array
+        $result = $this->con->query($sql);
+        // if there is a result
+        if($result->rowCount() > 0){
+            // getting the result as an associative array
+            $data = $result->fetchAll(PDO::FETCH_ASSOC);
+            // returning the data
+            return $data;
+        }
+        
+    }
 }
