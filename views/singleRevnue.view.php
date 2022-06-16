@@ -21,7 +21,7 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="logo.png" alt="">
+                    <img src="../../views/assets/img/unknown.png" alt="">
                 </span>
 
                 <div class="text logo-text">
@@ -109,10 +109,11 @@
         </div>
         <div class="container-fluid ps-5 pe-5">
             <div class="task">
-                <form method="POST" class="">
+                <form method="POST" class="" action="../edit-revenue">
                     <div class="mb-3">
+                        <input type="text" name="Revenueid" hidden value="<?php echo $revenue['Revenueid']; ?>">
                         <label for="exampleInputEmail1" class="form-label white">Project</label>
-                        <select class="form-select bg-dark white" aria-label="Default select example">
+                        <select name="project" class="form-select bg-dark white" aria-label="Default select example">
                             <?php
                             //printing the current project
                             echo '<option selected value='.$revenue['projectid'].'>'.$revenue['name'].'</option>';
@@ -125,15 +126,15 @@
                       </div>
                       <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label white">Revenue</label>
-                        <input type="text" value="<?php echo $revenue['allrevenue'] ?>" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Revenue">
+                        <input type="text" name="allrevenue" value="<?php echo $revenue['allrevenue'] ?>" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Revenue">
                       </div>
                       <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label white">Personal Revenue</label>
-                        <input type="text" value="<?php echo $revenue['personalrevenue'] ?>" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Personal amount">
+                        <input type="text" name="personalrevenue" value="<?php echo $revenue['personalrevenue'] ?>" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Personal amount">
                       </div>
                       <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label white">Date of payment</label>
-                        <input type="date" value="<?php $newDate = date("Y-m-d", strtotime($revenue['datefopayment'])); echo $newDate; ?>" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="date of payment">
+                        <input type="date" name="datefopayment" value="<?php $newDate = date("Y-m-d", strtotime($revenue['datefopayment'])); echo $newDate; ?>" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="date of payment">
                       </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -142,7 +143,7 @@
         </div>
     </section>
 
-    <script src="./assets/js/dashboard.js"></script>
+    <script src="../../views/assets/js/dashboard.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>

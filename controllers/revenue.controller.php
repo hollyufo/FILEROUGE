@@ -47,5 +47,14 @@ class revenueController extends controller{
           // returning the data with the view
           return $this->view("singleRevnue", $data);
     }
+    // model to update the revenue
+    public function updateRevnue(){
+        // calling the function from modelt and passing the data
+        $revenue = new revenue();
+        // passing the Post data to the model
+        $revenue->updateRevnue($_POST['Revenueid'], $_POST['project'], $_POST['personalrevenue'], $_POST['datefopayment'], $_POST['allrevenue']);
+        // redirecting to the revenue page
+        redirect("/revenue");
+    }
 
 }

@@ -56,4 +56,16 @@ class revenue extends Model{
             return $data;
         }
     }
+    // model to update the revenue
+    public function updateRevnue($id, $project, $personalrevenue, $datefopayment, $allrevenue){
+        // sql query
+        $sql = "UPDATE revenue SET project = '$project', personalrevenue = '$personalrevenue', datefopayment = '$datefopayment', allrevenue = '$allrevenue' WHERE revenueid = '$id'";
+        // getting the result as a associative array
+        $result = $this->con->query($sql);
+        // if there is a result
+        if($result){
+            // returning the data
+            return true;
+        }
+    }
 }

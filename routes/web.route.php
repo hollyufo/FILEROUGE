@@ -88,4 +88,10 @@ Route::get('/revenue/delete/{id}',function($id){
 // route to edit a revenue
 Route::get('/revenue/edit/{id}',function($id){
     return Route::controller("revenue","singleRevnue");
+    
+});
+// route to update a revenue
+Route::post('/revenue/edit-revenue',function(){
+    return Route::controller("revenue","updateRevnue");
+    
 });
