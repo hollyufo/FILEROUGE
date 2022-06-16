@@ -47,6 +47,10 @@ Route::get('/projects',function(){
 Route::post('/projects',function(){
     return Route::controller("admin","newProject");
 });
+// deleting a project
+Route::get('/projects/delete/{id}',function($id){
+    return Route::controller("admin","deleteProject");
+});
 // single project page
 Route::get('/projects/{id}',function($id){
     return Route::controller("admin","singleProject");
@@ -71,3 +75,5 @@ Route::post('/projects/update-task',function(){
 Route::get('/projects/delete-task/{id}/{projectid}',function($id, $projectid){
     return Route::controller("admin","deleteTask");
 });
+//====================================================== end of project =======================================================================================
+//====================================================== start of revenue =======================================================================================

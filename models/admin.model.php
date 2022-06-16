@@ -31,6 +31,19 @@ class admin extends Model{
         }
         
     }
+    // deleting a project with 1 parameter
+    public function deleteProject($id){
+        // sql query
+        $sql = "DELETE FROM project WHERE projectid = '$id'";
+        // getting the result as a associative array
+        $result = $this->con->query($sql);
+        // if there is a result
+        if($result){
+            // returning the data
+            return true;
+        }
+        
+    }
     // getting a single project from the data base
     public function getSingleProject($id){
         // sql query

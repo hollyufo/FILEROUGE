@@ -33,6 +33,16 @@ class adminController extends controller{
         $data = $projects->createProject($_POST['ProjectName'], $_POST['description'], $img);
         redirect('/projects');
     }
+    // deleting a project
+    public function deleteProject($id){
+        $data = array (
+            "id" => $id
+        );
+        // using the model to get the projects
+        $projects = new admin();
+        $data = $projects->deleteProject($data['id']);
+        redirect('/projects');
+    }
     // single project page
     public function singleProject($id){
         $data = array (
