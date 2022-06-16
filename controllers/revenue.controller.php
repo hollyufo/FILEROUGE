@@ -9,7 +9,7 @@ class revenueController extends controller{
    public function revenue(){
         // calling the modal to get the revenue
         $revenue = new revenue();
-        $data = $revenue->getRevnue();
+        $data['revenue'] = $revenue->getRevnue();
         // returning the data with the view
         return $this->view("revenue",$data);
 

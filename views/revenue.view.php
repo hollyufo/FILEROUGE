@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<?php
-  var_dump($data);
-?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -118,14 +115,18 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
-                      <td>Mark</td>
-                      <td><i class='bx bx-pencil'></i> <i class='bx bx-trash' ></i></td>
-                    </tr>
+                    <?php 
+                      foreach ($data['revenue'] as $value) {
+                        echo "<tr>";
+                        echo "<td>".$value['Revenueid']."</td>";
+                        echo "<td>".$value['name']."</td>";
+                        echo "<td>".$value['allrevenue']."</td>";
+                        echo "<td>".$value['personalrevenue']."</td>";
+                        echo "<td>".$value['datefopayment']."</td>";
+                        echo "<td><i class='bx bx-pencil'></i> <i class='bx bx-trash' ></i></td>"; 
+                        echo "</tr>";
+                      }
+                    ?>
                   <tbody>
                 </table>
             </div>
@@ -171,7 +172,7 @@
               </div>
             </div>
         </div>
-    <script src="./assets/js/dashboard.js"></script>
+    <script src="./views/assets/js/dashboard.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>
