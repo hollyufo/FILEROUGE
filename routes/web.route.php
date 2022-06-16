@@ -77,3 +77,7 @@ Route::get('/projects/delete-task/{id}/{projectid}',function($id, $projectid){
 });
 //====================================================== end of project =======================================================================================
 //====================================================== start of revenue =======================================================================================
+// route to get the revenue
+Route::get('/revenue',function(){
+    return Route::controller("revenue","revenue");
+});
