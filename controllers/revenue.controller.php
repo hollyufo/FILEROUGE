@@ -13,5 +13,17 @@ class revenueController extends controller{
         // returning the data with the view
         return $this->view("revenue",$data);
 
+   }
+   // deleting a revenue with 1 parameter
+   public function deleteRevnue($id){
+        // getting the id from the url
+        $data = array (
+            "id" => $id
+        );
+        // calling the modal to delete the revenue
+        $revenue = new revenue();
+        $data['revenue'] = $revenue->deleteRevnue($data['id']);
+        // returning the data with the view
+        redirect("/revenue");
    }    
 }

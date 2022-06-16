@@ -16,4 +16,16 @@ class revenue extends Model{
             return $data;
         }
     }
+    // deleting a revenue with 1 parameter
+    public function deleteRevnue($id){
+        // sql query
+        $sql = "DELETE FROM revenue WHERE revenueid = '$id'";
+        // getting the result as a associative array
+        $result = $this->con->query($sql);
+        // if there is a result
+        if($result){
+            // returning the data
+            return true;
+        }
+    }
 }
