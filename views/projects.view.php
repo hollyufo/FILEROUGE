@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php var_dump($data['users']) ?>
+    <?php var_dump($data['tasks']) ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -129,21 +129,28 @@
                     <tr>
                       <?php 
                         // printing the tasks
-                        foreach ($data['tasks'] as $task) {
-                          echo "<tr>";
-                          echo "<td>".$task['taskid']."</td>";
-                          echo "<td>".$task['taskname']."</td>";
-                          echo "<td>".$task['explanation']."</td>";
-                          echo "<td>".$task['Status']."</td>";
-                          echo "<td>".$task['FullName']."</td>";
-                          echo "<td>".$task['startdate']."</td>";
-                          echo "<td>".$task['enddate']."</td>";
-                          echo '<td> <a href=""><i class="bx bx-pencil"></i></a> <a href=""><i class="bx bx-trash" ></i></a> </td>';
-                          echo '<td><form action="">
-                                    <input hidden name="checkbox" value="'.$task['taskid'].'">
-                                    <a class="" type="submit" name="done"><i class="bx bx-check"></i></a>
-                                </form></td>';
-                          echo "</tr>";
+                        if(empty($data['tasks'])){
+                          // alert if there is no task
+                          echo '<div class="alert alert-warning" role="alert">
+                          There is no tasks !
+                        </div>';
+                        }else{
+                                  foreach ($data['tasks'] as $task) {
+                                  echo "<tr>";
+                                  echo "<td>".$task['taskid']."</td>";
+                                  echo "<td>".$task['taskname']."</td>";
+                                  echo "<td>".$task['explanation']."</td>";
+                                  echo "<td>".$task['Status']."</td>";
+                                  echo "<td>".$task['FullName']."</td>";
+                                  echo "<td>".$task['startdate']."</td>";
+                                  echo "<td>".$task['enddate']."</td>";
+                                  echo '<td> <a href=""><i class="bx bx-pencil"></i></a> <a href=""><i class="bx bx-trash" ></i></a> </td>';
+                                  echo '<td><form action="">
+                                            <input hidden name="checkbox" value="'.$task['taskid'].'">
+                                            <a class="" type="submit" name="done"><i class="bx bx-check"></i></a>
+                                        </form></td>';
+                                  echo "</tr>";
+                                }
                         }
                       ?>
                       
@@ -168,14 +175,14 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form method="POST" class="">
+              <form method="POST" class="" action="./add">
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label white">Task Name</label>
-                  <input type="text" class="form-control bg-dark" name="taskname" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Task name...">
+                  <input type="text" class="form-control white bg-dark" name="taskname" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Task name...">
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label white">Explanation</label>
-                  <input type="text" name="explanation" class="form-control bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
+                  <input type="text" name="explanation" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label white">status</label>
@@ -192,18 +199,18 @@
                         <option selected disabled>Open this select menu</option>
                         <?php 
                           foreach ($data['users'] as $user) {
-                            echo "<option value='".$user['id']."'>".$user['FullName']."</option>";
+                            echo "<option value='".$user['userid']."'>".$user['FullName']."</option>";
                           }
                         ?>
                       </select>
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label white">Date of start</label>
-                    <input type="date" name="startdate" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
+                    <input type="date" name="startdate" class="white form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label white">Date of end</label>
-                    <input type="date" name="enddate" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
+                    <input type="date" name="enddate" class="white form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
                   </div>
                   <input type="text" name="project" hidden value=<?php echo $data['0']['projectid']; ?>>
                 <button type="submit" class="btn btn-primary">Submit</button>

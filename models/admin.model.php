@@ -62,10 +62,12 @@ class admin extends Model{
         
     }
     // creating a new task with 4 parameters
-    public function createTask($taskname ,$description, $status , $asignedto, $project, $startdate, $enddate){
+    public function createTask($description , $status , $asignedto , $startdate , $enddate , $project , $taskname){
         // sql query
-        $sql = "INSERT INTO task VALUES (NULL,  '$description', '$status' ,'$asignedto' , '$startdate', '$enddate', '$project','$taskname',)";
+        //$sql = "INSERT INTO task VALUES (NULL, '$description', '$status' ,'$asignedto' , '$startdate' , '$enddate' , '$project' ,'$taskname')";
+        $sql = "INSERT INTO `task`(`taskid`, `explanation`, `Status`, `asignedto`, `startdate`, `enddate`, `project`, `taskname`) VALUES (NULL,'$description','$status','$asignedto','$startdate','$enddate','$project','$taskname');";
         // getting the result as a associative array
+        var_dump($_POST);
         $result = $this->con->query($sql);
         // if there is a result
         if($result){
@@ -86,6 +88,19 @@ class admin extends Model{
             $data = $result->fetchAll(PDO::FETCH_ASSOC);
             // returning the data
             return $data;
+        }
+        
+    }
+    // updating task status as finished
+    public function updateTask($id){
+        // sql query
+        $sql = "UPDATE task SET status = 'Done' WHERE taskid = $id";
+        // getting the result as a associative array
+        $result = $this->con->query($sql);
+        // if there is a result
+        if($result){
+            // returning the data
+            return true;
         }
         
     }

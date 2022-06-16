@@ -58,7 +58,14 @@ class adminController extends controller{
         // Creating a new task
         $projects = new admin();
         $data = $projects->createTask($_POST['explanation'], $_POST['status'], $_POST['asignedto'], $_POST['startdate'], $_POST['enddate'], $_POST['project'], $_POST['taskname']);
-        redirect('/project/'.$_POST['project']);
+        redirect('/projects/'.$_POST['project']);
 
+    }
+    // updating task status as finihesd
+    public function updateTask(){
+        // updating the task
+        $projects = new admin();
+        $data = $projects->updateTask($_POST['taskid']);
+        redirect('/projects/'.$_POST['project']);
     }
 }   

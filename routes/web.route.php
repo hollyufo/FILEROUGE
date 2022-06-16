@@ -51,3 +51,11 @@ Route::post('/projects',function(){
 Route::get('/projects/{id}',function($id){
     return Route::controller("admin","singleProject");
 });
+// route to create a new task
+Route::post('/projects/add',function(){
+    return Route::controller("admin","newTask");
+});
+// Updating a task when finished
+Route::post('/projects/task-finished',function(){
+    return Route::controller("admin","taskfinihed");
+});
