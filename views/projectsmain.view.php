@@ -114,7 +114,8 @@
                         <div class="card-body">
                           <h5 class="card-title">'.$project['name'].'</h5>
                           <p class="card-text">'.$project['discription'].'.</p>
-                          <a href="/projects/'.$project['projectid'].'" class="btn btn-dark border border-light">more details</a>
+                          <a href="./projects/'.$project['projectid'].'" class="btn btn-dark border border-light">more details</a>
+                          <a href="./projects/delete/'.$project['projectid'].'" class="btn btn-dark border border-light">delete</a>
                         </div>
                       </div>
                     </div>

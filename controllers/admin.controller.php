@@ -33,4 +33,21 @@ class adminController extends controller{
         $data = $projects->createProject($_POST['ProjectName'], $_POST['description'], $img);
         redirect('/projects');
     }
-}
+    // single project page
+    public function singleProject($id){
+        $data = array (
+            "id" => $id
+        );
+        // using the model to get the projects
+        $projects = new admin();
+        $ide = $data['id'];
+        // getting the project from the data base
+        $data = $projects->getSingleProject($data['id']);
+        // getting the task from db
+        $tasks = $projects->getTasks($ide);
+        // ading values to the data array
+        $data['tasks'] = $tasks;
+        // returning the view with the data
+        return $this->view("projects", $data);
+    }
+}   

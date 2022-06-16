@@ -1,18 +1,18 @@
-<!-- Coding by CodingLab | www.codinglabweb.com -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php var_dump($data['tasks']) ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="./assets/css/dashboard.css">
+    <link rel="stylesheet" href="../views/assets/css/dashboard.css">
     
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     
-    <title>Dashboard Sidebar Menu</title> 
+    <title>Dashboard</title> 
 </head>
 <body class="dark">
     <nav class="sidebar close">
@@ -24,7 +24,7 @@
 
                 <div class="text logo-text">
                     <span class="name">Imrane Chaibi</span>
-                    <span class="profession">Web developer</span>
+                    <span class="profession">Webb developer</span>
                 </div>
             </div>
 
@@ -99,30 +99,14 @@
 
     <section class="home">
         <div class="text top-buttn">
-            <span>Project Name</span>
+            <span><?php echo $data['0']['name'] ?></span>
             <button type="button" class="btn btn-dark border border-light" data-bs-toggle="modal" data-bs-target="#exampleModal">Create task </button>
         </div>
         <div class="container-fluid pT3">
           <div class="Description white border-purple pt2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem optio earum voluptatem assumenda nisi sunt modi obcaecati fugit quo perferendis, ullam corrupti excepturi quibusdam saepe sed, et, iusto necessitatibus molestias?
-            <div class="Description white pt-5">
-              <h2 style="text-align: center;"> deadline </h2>
-              <ul class="mylist">
-                <li>starts 1</li>
-                <li>end  2</li>
-              </ul>
-          </div>
+          <?php echo $data['0']['discription'] ?>
           </div>
 
-          <div class="Description white border-purple pt2">
-              <h2 style="text-align: center;"> contributors </h2>
-              <ul class="mylist">
-                <li>user 1</li>
-                <li>user 2</li>
-                <li>user 3</li>
-                <li>user 4</li>
-              </ul>
-          </div>
           <div class="Description white border-purple pt2">
             <h2 style="text-align: center;"> task </h2>
             <div style="overflow: auto;">
@@ -133,7 +117,7 @@
                       <th scope="col">Task title</th>
                       <th scope="col">Explanation</th>
                       <th scope="col">Status</th>
-                      <th scope="col">Creator</th>
+                      
                       <th scope="col">Assignee</th>
                       <th scope="col">Creation date</th>
                       <th scope="col">Deadline</th>
@@ -143,16 +127,26 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
-                      <td>@mdo</td>
-                      <td><i class='bx bx-pencil'></i> <i class='bx bx-trash' ></i></td>
-                      <td>@mdo</td>
+                      <?php 
+                        // printing the tasks
+                        foreach ($data['tasks'] as $task) {
+                          echo "<tr>";
+                          echo "<td>".$task['taskid']."</td>";
+                          echo "<td>".$task['taskname']."</td>";
+                          echo "<td>".$task['explanation']."</td>";
+                          echo "<td>".$task['Status']."</td>";
+                          echo "<td>".$task['FullName']."</td>";
+                          echo "<td>".$task['startdate']."</td>";
+                          echo "<td>".$task['enddate']."</td>";
+                          echo '<td><i class="bx bx-pencil"></i> <i class="bx bx-trash" ></i></td>';
+                          echo '<td><form action="">
+                                    <input hidden name="checkbox" value="'.$task['taskid'].'">
+                                    <button class="btn btn-dark" type="submit" name="done"><i class="bx bx-check"></i></button>
+                                </form></td>';
+                          echo "</tr>";
+                        }
+                      ?>
+
                     </tr>
                   <tbody>
                 </table>
@@ -216,7 +210,7 @@
           </div>
         </div>
     </div>
-    <script src="./assets/js/dashboard.js"></script>
+    <script src="./views/assets/js/dashboard.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>

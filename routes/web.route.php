@@ -47,3 +47,7 @@ Route::get('/projects',function(){
 Route::post('/projects',function(){
     return Route::controller("admin","newProject");
 });
+// single project page
+Route::get('/projects/{id}',function($id){
+    return Route::controller("admin","singleProject");
+});
