@@ -104,4 +104,32 @@ class admin extends Model{
         }
         
     }
+    // getting a single task from the data base
+    public function getSingleTask($id){
+        // sql query
+        $sql = "SELECT * FROM task INNER JOIN users ON task.asignedto=users.userid WHERE taskid = $id";
+        // getting the result as a associative array
+        $result = $this->con->query($sql);
+        // if there is a result
+        if($result->rowCount() > 0){
+            // getting the result as an associative array
+            $data = $result->fetchAll(PDO::FETCH_ASSOC);
+            // returning the data
+            return $data;
+        }
+        
+    }
+    // editing task
+    public function editTask($id , $description , $status , $asignedto , $startdate , $enddate , $project , $taskname){
+        // sql query
+        $sql = "UPDATE task SET explanation = '$description' , status = '$status' , asignedto = '$asignedto' , startdate = '$startdate' , enddate = '$enddate' , project = '$project' , taskname = '$taskname' WHERE taskid = $id";
+        // getting the result as a associative array
+        $result = $this->con->query($sql);
+        // if there is a result
+        if($result){
+            // returning the data
+            return true;
+        }
+        
+    }
 }

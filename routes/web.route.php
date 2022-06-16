@@ -59,3 +59,7 @@ Route::post('/projects/add',function(){
 Route::post('/projects/task-finished',function(){
     return Route::controller("admin","taskfinihed");
 });
+// route to update a task
+Route::get('/projects/edit-task/{id}',function($id){
+    return Route::controller("admin","editTask");
+});

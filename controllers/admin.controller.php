@@ -68,4 +68,18 @@ class adminController extends controller{
         $data = $projects->updateTask($_POST['taskid']);
         redirect('/projects/'.$_POST['projectid']);
     }
+    // editing a task
+    public function editTask($id){
+        $data = array (
+            "id" => $id
+        );
+        // getting the task from the data base
+        $projects = new admin();
+        $data['onetask'] = $projects->getSingleTask($data['id']);
+        // sending all the users to the view
+        $data['users'] = $projects->getUsers();
+        // returning the view with the data
+        return $this->view("edittask", $data);
+    }
+
 }   

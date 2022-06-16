@@ -1,13 +1,13 @@
-<!-- Coding by CodingLab | www.codinglabweb.com -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="./assets/css/dashboard.css">
+    <link rel="stylesheet" href="../../views/assets/css/dashboard.css">
     
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -19,7 +19,7 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="logo.png" alt="">
+                    <img src="../../views/assets/img/unknown.png" alt="">
                 </span>
 
                 <div class="text logo-text">
@@ -105,38 +105,44 @@
             <div class="task">
                 <form method="POST" class="">
                     <div class="mb-3">
+                        <input type="text" hidden value=<?php $task = $data['onetask'][0];  echo $task['taskid'] ?>>
                       <label for="exampleInputEmail1" class="form-label white">Task Name</label>
-                      <input type="text" class="form-control bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Task name...">
+                      <input type="text" class="form-control white bg-dark" id="exampleInputEmail1" value="<?php echo $task['taskname']; ?>" aria-describedby="emailHelp" placeholder="Task name...">
                     </div>
+                    <?php
+  
+                    ?>
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label white">Explanation</label>
-                      <input type="text" class="form-control bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
+                      <input type="text" class="form-control white bg-dark" value="<?php echo $task['explanation']; ?>" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label white">status</label>
                         <select class="form-select bg-dark white" aria-label="Default select example">
-                            <option selected disabled>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <?php echo '<option selected value="'.$task['Status'].'">'.$task['Status'].'</option>'; ?>
+                            <option value="To do">To do</option>
+                            <option value="Doing">Doing</option>
+                            <option value="Done">Done</option>
                           </select>
                       </div>
                       <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label white">Asigned to</label>
                         <select class="form-select bg-dark white" aria-label="Default select example">
-                            <option selected disabled>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <?php
+                                echo '<option selected value='.$task['userid'].' >'.$task['FullName'].'</option>';
+                                foreach ($data['users'] as $user) {
+                                echo "<option value='".$user['userid']."'>".$user['FullName']."</option>";
+                                }
+                            ?>
                           </select>
                       </div>
                       <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label white">Date of start</label>
-                        <input type="date" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
+                        <input type="date" value="<?php $newDate = date("Y-m-d", strtotime($task['startdate'])); echo $newDate; ?>" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
                       </div>
                       <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label white">Date of end</label>
-                        <input type="date" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
+                        <input type="date" value="<?php $newDate = date("Y-m-d", strtotime($task['enddate'])); echo $newDate; ?>" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
                       </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -144,7 +150,7 @@
             </div>
         </div>
     </section>
-    <script src="./assets/js/dashboard.js"></script>
+    <script src="../../views/assets/js/dashboard.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>
