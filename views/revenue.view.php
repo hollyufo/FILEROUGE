@@ -123,7 +123,7 @@
                         echo "<td>".$value['allrevenue']."</td>";
                         echo "<td>".$value['personalrevenue']."</td>";
                         echo "<td>".$value['datefopayment']."</td>";
-                        echo '<td> <a href="./edit-task/'.$value['Revenueid'].'"><i class="bx bx-pencil"></i></a> <a href="./revenue/delete/'.$value['Revenueid'].'"><i class="bx bx-trash" ></i></a> </td>'; 
+                        echo '<td> <a href="./revenue/edit/'.$value['Revenueid'].'"><i class="bx bx-pencil"></i></a> <a href="./revenue/delete/'.$value['Revenueid'].'"><i class="bx bx-trash" ></i></a> </td>'; 
                         echo "</tr>";
                       }
                     ?>

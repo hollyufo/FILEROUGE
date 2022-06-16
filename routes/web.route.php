@@ -85,3 +85,7 @@ Route::get('/revenue',function(){
 Route::get('/revenue/delete/{id}',function($id){
     return Route::controller("revenue","deleteRevnue");
 });
+// route to edit a revenue
+Route::get('/revenue/edit/{id}',function($id){
+    return Route::controller("revenue","singleRevnue");
+});

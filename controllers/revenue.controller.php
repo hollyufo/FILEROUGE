@@ -25,5 +25,27 @@ class revenueController extends controller{
         $data['revenue'] = $revenue->deleteRevnue($data['id']);
         // returning the data with the view
         redirect("/revenue");
-   }    
+   }
+       // getting all the projects from the model
+       public function projects(){
+        // calling the modal to get the projects
+        $revenue = new revenue();
+        $data['projects'] = $revenue->getProjects();
+        // returning the data with the view
+        return $data;
+    }
+   // getting a single revenue from the model
+    public function singleRevnue($id){
+          // getting the id from the url
+          $data = array (
+                "id" => $id
+          );
+          // calling the modal to get the revenue
+          $revenue = new revenue();
+          $data['revenue'] = $revenue->getSingleRevnue($data['id']);
+          $data['projects'] = $revenue->getProjects();
+          // returning the data with the view
+          return $this->view("singleRevnue", $data);
+    }
+
 }
