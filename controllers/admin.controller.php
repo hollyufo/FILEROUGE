@@ -62,10 +62,10 @@ class adminController extends controller{
 
     }
     // updating task status as finihesd
-    public function updateTask(){
+    public function taskfinihed(){
         // updating the task
         $projects = new admin();
         $data = $projects->updateTask($_POST['taskid']);
-        redirect('/projects/'.$_POST['project']);
+        redirect('/projects/'.$_POST['projectid']);
     }
 }   

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php var_dump($data['tasks']) ?>
+    <?php var_dump($data) ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -145,9 +145,10 @@
                                   echo "<td>".$task['startdate']."</td>";
                                   echo "<td>".$task['enddate']."</td>";
                                   echo '<td> <a href=""><i class="bx bx-pencil"></i></a> <a href=""><i class="bx bx-trash" ></i></a> </td>';
-                                  echo '<td><form action="">
-                                            <input hidden name="checkbox" value="'.$task['taskid'].'">
-                                            <a class="" type="submit" name="done"><i class="bx bx-check"></i></a>
+                                  echo '<td><form  method="POST" action="./task-finished">
+                                            <input hidden name="taskid" value="'.$task['taskid'].'">
+                                            <input hidden name="projectid" value="'.$data[0]['projectid'].'">
+                                            <button type="submit" name="submit"><i class="bx bx-check"></i></button>
                                         </form></td>';
                                   echo "</tr>";
                                 }
