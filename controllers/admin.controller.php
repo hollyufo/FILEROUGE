@@ -8,7 +8,11 @@ class adminController extends controller{
     
     // admin dashboard
     public function dashboard(){
-        return $this->view("dashboard");
+        // calling the model
+        $model = new admin();
+        // getting the stats from the database
+        $data = $model->getStats();
+        return $this->view("dashboard",$data);
     }
     // projects
     public function projects(){

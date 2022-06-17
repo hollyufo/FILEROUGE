@@ -2,6 +2,57 @@
 require "_classes/model.php";
 
 class admin extends Model{
+
+    // getting the stats from the database
+    public function getStats(){
+        // getting the number of projects from the database as assoc array
+        // sql query
+        $sql = "SELECT COUNT(*) as num FROM project";
+        $result = $this->con->query($sql);
+        // getting the data from the database as assoc array
+        if($result->rowCount() > 0){
+            // getting the result as an associative array
+            $data['Cprojects'] = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        // getting the number of notes from the database as assoc array
+        // sql query
+        $sql = "SELECT COUNT(*) as num FROM notes";
+        $result = $this->con->query($sql);
+        // getting the data from the database as assoc array
+        if($result->rowCount() > 0){
+            // getting the result as an associative array
+            $data['Cnotes'] = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        // getting the sum of the revenue 
+        // sql query
+        $sql = "SELECT SUM(allrevenue) as sum FROM revenue";
+        $result = $this->con->query($sql);
+        // getting the data from the database as assoc array
+        if($result->rowCount() > 0){
+            // getting the result as an associative array
+            $data['revenuesum'] = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        // getting the count of users from the database as assoc array
+        // sql query
+        $sql = "SELECT COUNT(*) as num FROM users";
+        $result = $this->con->query($sql);
+        // getting the data from the database as assoc array
+        if($result->rowCount() > 0){
+            // getting the result as an associative array
+            $data['Cusers'] = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        // getting the count of code snippets from the database as assoc array
+        // sql query
+        $sql = "SELECT COUNT(*) as num FROM code";
+        $result = $this->con->query($sql);
+        // getting the data from the database as assoc array
+        if($result->rowCount() > 0){
+            // getting the result as an associative array
+            $data['num'] = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        // returning the data
+        return $data;
+    }
     
     //getting al the projects from the data base
     public function getProjects(){

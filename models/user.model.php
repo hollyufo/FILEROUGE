@@ -16,7 +16,9 @@ class user extends Model{
                 $_SESSION['userid'] = $row['userid'];
                 $_SESSION['username'] = $row['FullName'];
                 $_SESSION['userrole'] = $row['roll'];
+                $_SESSION['userimage'] = $row['img'];
                 $_SESSION['loggedin'] = true;
+                $_SESSION['roll'] = $row['roll'];
                 return true;
             }else{  
                 return false;
@@ -44,7 +46,7 @@ class user extends Model{
             if($result->rowCount() > 0){
                 redirect('/login?emailexists=1');
             }else{
-                $img = "placeholder.png";
+                $img = "user.png";
                 $sql = "INSERT INTO users VALUES (NULL, '$fullname', '$email', '$password', '$dates' ,'$role', '$img')";
                 $this->con->query($sql);
                 return true;

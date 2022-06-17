@@ -1,6 +1,3 @@
-<?php 
-    var_dump($data['invitecodes']);
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
