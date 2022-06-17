@@ -41,4 +41,30 @@ class note extends Model{
             return true;
         }
     }
+    // getting a single note from the data base
+    public function getSingleNote($id){
+        // sql query
+        $sql = "SELECT * FROM notes WHERE noteid = $id";
+        // getting the result as a associative array
+        $result = $this->con->query($sql);
+        // if there is a result
+        if($result->rowCount() > 0){
+            // getting the result as an associative array
+            $data = $result->fetchAll(PDO::FETCH_ASSOC);
+            // returning the data
+            return $data;
+        }
+    }
+    // updating a note 
+    public function updateNote($id, $notetitle, $notebody){
+        // sql query
+        $sql = "UPDATE notes SET notename = '$notetitle', notebody = '$notebody' WHERE noteid = '$id'";
+        // getting the result as a associative array
+        $result = $this->con->query($sql);
+        // if there is a result
+        if($result){
+            // returning the data
+            return true;
+        }
+    }
 }

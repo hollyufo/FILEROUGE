@@ -1,4 +1,6 @@
-<!-- Coding by CodingLab | www.codinglabweb.com -->
+<?php 
+    $note = $data['0'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="./assets/css/dashboard.css">
+    <link rel="stylesheet" href="../../views/assets/css/dashboard.css">
     
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -103,14 +105,15 @@
         </div>
         <div class="container-fluid ps-5 pe-5">
             <div class="task">
-                <form method="POST" class="">
+                <form method="POST" action="../update" class="">
                     <div class="mb-3">
+                    <input type="text" name="noteid" hidden value="<?php echo $note['noteid'] ?>" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp">
                       <label for="exampleInputEmail1" class="form-label white">Title</label>
-                      <input type="text" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="title">
+                      <input type="text" name="notetitle" value="<?php echo $note['notename'] ?>" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="title">
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label white">Body</label>
-                      <input type="text" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Body">
+                      <input type="text" name="notebody" value="<?php echo $note['notebody'] ?>" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Body">
                     </div>
                   <button type="submit" class="btn btn-primary">Update</button>
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancel</button>

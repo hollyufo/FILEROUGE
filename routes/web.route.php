@@ -109,3 +109,11 @@ Route::post('/notes',function(){
 Route::get('/notes/delete/{id}',function($id){
     return Route::controller("note","deleteNote");
 });
+//edit a note
+Route::get('/notes/edit/{id}',function($id){
+    return Route::controller("note","getSingleNote");
+});
+// update a note
+Route::post('/notes/update',function(){
+    return Route::controller("note","updateNote");
+});
