@@ -117,3 +117,17 @@ Route::get('/notes/edit/{id}',function($id){
 Route::post('/notes/update',function(){
     return Route::controller("note","updateNote");
 });
+//====================================================== end of notes =======================================================================================
+//====================================================== start of code snippet =======================================================================================
+// route to get the code snippets
+Route::get('/code',function(){
+    return Route::controller("code","getallcode");
+});
+// route to display a single code snippet
+Route::get('/code/{id}',function($id){
+    return Route::controller("code","singlecode");
+});
+// route to add a code snippet
+Route::post('/code',function(){
+    return Route::controller("code","addcode");
+});
