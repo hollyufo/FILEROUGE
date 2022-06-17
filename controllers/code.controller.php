@@ -39,4 +39,15 @@ class codeController extends controller{
         // redirecting to the code page
         redirect("/code");
     }
+    // deleting a code snippet from the model
+    public function deletecode($id){
+        $data = array (
+            "id" => $id
+        );
+        // calling the modal to delete the code
+        $code = new code();
+        $data = $code->deleteCode($data['id']);
+        // redirecting to the code page
+        redirect("/code");
+    }
 }

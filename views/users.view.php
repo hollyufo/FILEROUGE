@@ -1,4 +1,6 @@
-<!-- Coding by CodingLab | www.codinglabweb.com -->
+<?php
+  var_dump($data['invitecodes']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="./assets/css/dashboard.css">
+    <link rel="stylesheet" href="./views/assets/css/dashboard.css">
     
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -116,11 +118,15 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <th scope="row">1234</th>
-                          <td>admin</td>
-                          <td><i class='bx bx-trash' ></i></td>
-                        </tr>
+                        <?php
+                          foreach ($data['invitecodes'] as $invitecode) {
+                            echo "<tr>";
+                            echo "<td>".$invitecode['invite']."</td>";
+                            echo "<td>".$invitecode['usertype']."</td>";
+                            echo "<td><a href='users/delete-invite/".$invitecode['inviteid']."'><i class='bx bx-trash-alt'></i></a></td>";
+                            echo "</tr>";
+                          }
+                            ?>
                       <tbody>
                     </table>
                 </div>
@@ -130,23 +136,29 @@
                 <table class="table table-dark table-hover ">
                   <thead>
                     <tr>
-                      <th scope="col">id</th>
+                      <th scope="col">Id</th>
                       <th scope="col">Full name</th>
-                      <th scope="col">Revenue</th>
                       <th scope="col">Email</th>
-                      <th scope="col">date of Creation</th>
+                      <th scope="col">Date of Creation</th>
+                      <th scope="col">Role</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
-                      <td>Mark</td>
-                      <td><i class='bx bx-trash' ></i></td>
-                    </tr>
+                    <?php
+                      foreach($data['users'] as $user) {
+                          echo '
+                          <tr>
+                            <th scope="row">'.$user['userid'].'</th>
+                            <td>'.$user['FullName'].'</td>
+                            <td>'.$user['email'].'</td>
+                            <td>'.$user['signup'].'</td>
+                            <td>'.$user['roll'].'</td>
+                            <td><a href="users/delete/'.$user['userid'].'"> <i class="bx bx-trash" ></i></a></td>
+                          </tr>
+                          ';
+                      }
+                    ?>
                   <tbody>
                 </table>
             </div>
@@ -166,16 +178,15 @@
                   <form method="POST" class="">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label white">User type</label>
-                        <select class="form-select bg-dark white" aria-label="Default select example">
+                        <select name="type" class="form-select bg-dark white" aria-label="Default select example">
                             <option selected disabled>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="user">user</option>
+                            <option value="superadmin">superadmin</option>
                           </select>
                       </div>
                       <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label white">code</label>
-                        <input type="text" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Revenue">
+                        <label name="code" for="exampleInputEmail1" class="form-label white">code</label>
+                        <input name="code" type="text" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="invite code">
                       </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

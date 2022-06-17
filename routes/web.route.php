@@ -131,3 +131,25 @@ Route::get('/code/{id}',function($id){
 Route::post('/code',function(){
     return Route::controller("code","addcode");
 });
+// route to delete a code snippet
+Route::get('/code/delete/{id}',function($id){
+    return Route::controller("code","deletecode");
+});
+//====================================================== end of code snippet =======================================================================================
+//====================================================== start of user pages =======================================================================================
+// route to get the users
+Route::get('/users',function(){
+    return Route::controller("user","getAllUsers");
+});
+// route to delete a user
+Route::get('/users/delete/{id}',function($id){
+    return Route::controller("user","deleteUser");
+});
+// delete an invite
+Route::get('/users/delete-invite/{id}',function($id){
+    return Route::controller("user","deleteInvite");
+});
+// adding a new user
+Route::post('/users',function(){
+    return Route::controller("user","addinvite");
+});

@@ -44,10 +44,50 @@ class user extends Model{
             if($result->rowCount() > 0){
                 redirect('/login?emailexists=1');
             }else{
-                $sql = "INSERT INTO users VALUES (NULL, '$fullname', '$email', '$password', '$dates' ,'$role', NULL)";
+                $img = "placeholder.png";
+                $sql = "INSERT INTO users VALUES (NULL, '$fullname', '$email', '$password', '$dates' ,'$role', '$img')";
                 $this->con->query($sql);
                 return true;
             }
         
+    }
+    // getting all the users from db 
+    public function getAllUsers(){
+        $sql = "SELECT * FROM users";
+        $result = $this->con->query($sql);
+        if($result->rowCount() > 0){
+            return $result->fetchAll(PDO::FETCH_ASSOC);
+        }else{
+            return false;
+        }
+    }
+    // deleting user from db
+    public function deleteUser($userid){
+        $sql = "DELETE FROM users WHERE userid = '$userid'";
+        $this->con->query($sql);
+        return true;
+    }
+    // getting all the invite code from db
+    public function getAllInviteCode(){
+        $sql = "SELECT * FROM invitecode";
+        $result = $this->con->query($sql);
+        if($result->rowCount() > 0){
+            $data = $result->fetchAll(PDO::FETCH_ASSOC);
+            return $data;
+        }else{
+            return false;
+        }
+    }
+    // delete invite code from db
+    public function deleteInviteCode($code){
+        $sql = "DELETE FROM invitecode WHERE inviteid = '$code'";
+        $this->con->query($sql);
+        return true;
+    }
+    // add invite code to db
+    public function addInviteCode($invitecode, $type){
+        $sql = "INSERT INTO invitecode VALUES (NULL, '$invitecode', '$type')";
+        $this->con->query($sql);
+        return true;
     }
 }

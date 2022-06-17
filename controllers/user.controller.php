@@ -42,4 +42,43 @@ class userController extends controller{
             redirect('/login?error=code');
         }
     }
+    // getting all the invite codes from the model
+    public function getAllInviteCodes(){
+        $user = new user();
+        $data['codes'] = $user->getAllInviteCode();
+        return $this->view("codes", $data);
+    }
+    // displaying all the users from the model
+    public function getAllUsers(){
+        $user = new user();
+        // getting all the invite codes from the model
+        $data['invitecodes']= $user->getAllInviteCode();
+
+        $data['users'] = $user->getAllUsers();
+        return $this->view("users", $data);
+    }
+    // delete user
+    public function deleteUser($id){
+        $data = array (
+            "id" => $id
+        );
+        $user = new user();
+        $user->deleteUser($data['id']);
+        redirect('/users');
+    }
+    // delete invite code
+    public function deleteInvite($id){
+        $data = array (
+            "id" => $id
+        );
+        $user = new user();
+        $user->deleteInviteCode($data['id']);
+        redirect('/users');
+    }
+    // add invite code
+    public function addInvite(){
+        $user = new user();
+        $user->addInviteCode($_POST['code'], $_POST['type']);
+        redirect('/users');
+    }
 }   

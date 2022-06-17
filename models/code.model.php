@@ -42,5 +42,16 @@ class code extends Model{
             return $result;
         }
     }
-
+    // deleting a code snippet from the database
+    public function deleteCode($id){
+        // sql query
+        $sql = "DELETE FROM code WHERE codeid = $id";
+        // executing the query
+        $result = $this->con->query($sql);
+        // if there is a result
+        if($result){
+            // returning the data
+            return $result;
+        }
+    }
 }

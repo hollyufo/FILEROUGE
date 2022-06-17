@@ -1,5 +1,5 @@
 <?php 
-    var_dump($data['code']);
+    var_dump($data['invitecodes']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -118,9 +118,11 @@
                 foreach($data['code'] as $code){
                     echo '
                     <div class="col">
-                    <a class="mylink22" href="./code/'.$code['codeid'].'">
+                    
                         <div class="card dark-cards mb-3 h-100" style="max-width: 18rem;">
+                        <div class="card-header spaser"> <a href="./code/delete/'.$code['codeid'].'" class="btn btn-dark border border-light">Delete</a></div>
                         <div class="card-body">
+                          <a class="mylink22" href="./code/'.$code['codeid'].'">
                           <h5 class="card-title">'.$code['codetitle'].'</h5>
                           <p class="card-text">'.$code['codeexplanation'].'.</p>
                         </div>
