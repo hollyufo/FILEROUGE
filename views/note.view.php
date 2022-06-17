@@ -14,16 +14,16 @@
     <title>Dashboard Sidebar Menu</title> 
 </head>
 <body class="dark">
-  <nav class="sidebar close">
+<nav class="sidebar close">
     <header>
         <div class="image-text">
             <span class="image">
-                <img src="./views/assets/img/unknown.png" alt="userpic">
+                <img src="./views/assets/img/<?php echo $_SESSION['userimage'] ?>" alt="userpic">
             </span>
 
             <div class="text logo-text">
-                <span class="name">Imrane Chaibi</span>
-                <span class="profession">Web developer</span>
+                <span class="name"><?php echo $_SESSION['username'] ?></span>
+                <span class="profession"><?php echo $_SESSION['userrole'] ?></span>
             </div>
         </div>
 
@@ -40,54 +40,45 @@
 
             <ul class="menu-links">
                 <li class="nav-link">
-                    <a href="dashboard.html">
+                    <a href="./dashboard">
                         <i class='bx bx-home-alt icon' ></i>
                         <span class="text nav-text">Dashboard</span>
                     </a>
                 </li>
-
                 <li class="nav-link">
-                    <a href="revenue.html">
+                    <a href="./revenue">
                         <i class='bx bx-bar-chart-alt-2 icon' ></i>
                         <span class="text nav-text">Revenue</span>
                     </a>
                 </li>
 
                 <li class="nav-link">
-                    <a href="projects.html">
+                    <a href="./projects">
                       <i class='bx bxs-briefcase-alt-2 icon'></i>
                         <span class="text nav-text">Projects</span>
                     </a>
                 </li>
 
                 <li class="nav-link">
-                    <a href="#">
+                    <a href="./notes">
                       <i class='bx bx-note icon' ></i>
                         <span class="text nav-text">Notes</span>
                     </a>
                 </li>
 
                 <li class="nav-link">
-                    <a href="users.html">
+                    <a href="./users">
                       <i class='bx bxs-user icon'></i>
                         <span class="text nav-text">Users</span>
                     </a>
                 </li>
 
                 <li class="nav-link">
-                  <a href="wallet.html">
+                  <a href="./code">
                       <i class='bx bx-code-alt icon' ></i>
                       <span class="text nav-text">Snippets</span>
                   </a>
               </li>
-
-                <li class="nav-link">
-                    <a href="wallet.html">
-                        <i class='bx bx-wallet icon' ></i>
-                        <span class="text nav-text">Wallet</span>
-                    </a>
-                </li>
-
             </ul>
         </div>
 
@@ -115,7 +106,7 @@
                     echo'
                             <div class="col">
                             <div class="card dark-cards mb-3 h-100" style="max-width: 18rem;">
-                                <div class="card-header spaser"><a href="./editnote" class="btn btn-dark border border-light">Edit</a> <a href="./notes/delete/'.$note['noteid'].'" class="btn btn-dark border border-light">Delete</a></div>
+                                <div class="card-header spaser"><a href="./notes/edit/'.$note['noteid'].'" class="btn btn-dark border border-light">Edit</a> <a href="./notes/delete/'.$note['noteid'].'" class="btn btn-dark border border-light">Delete</a></div>
                                 <div class="card-body">
                                 <h5 class="card-title">'.$note['notename'].'</h5>
                                 <p class="card-text">'.$note['notebody'].'.</p>

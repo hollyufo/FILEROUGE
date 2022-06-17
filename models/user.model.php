@@ -29,7 +29,7 @@ class user extends Model{
     }
     // check access code
     public function checkCode($code){
-        $sql = "SELECT * FROM invitecode WHERE code = '$code'";
+        $sql = "SELECT * FROM invitecode WHERE invite = '$code'";
         $result = $this->con->query($sql);
         if($result->rowCount() > 0){
             return true;
@@ -46,7 +46,7 @@ class user extends Model{
             if($result->rowCount() > 0){
                 redirect('/login?emailexists=1');
             }else{
-                $img = "user.png";
+                $img = "user.jpg";
                 $sql = "INSERT INTO users VALUES (NULL, '$fullname', '$email', '$password', '$dates' ,'$role', '$img')";
                 $this->con->query($sql);
                 return true;

@@ -7,11 +7,16 @@ require "./models/revenue.model.php";
 class revenueController extends controller{
    // getting all the revenue from the model
    public function revenue(){
-        // calling the modal to get the revenue
-        $revenue = new revenue();
-        $data['revenue'] = $revenue->getRevnue();
-        // returning the data with the view
-        return $this->view("revenue",$data);
+        if($_SESSION == 'superadmin'){
+            // calling the modal to get the revenue
+            $revenue = new revenue();
+            $data['revenue'] = $revenue->getRevnue();
+            // returning the data with the view
+            return $this->view("revenue",$data);
+        }else{
+            // retrun no acces view
+            return $this->view("noaccess");
+        }
 
    }
    // deleting a revenue with 1 parameter

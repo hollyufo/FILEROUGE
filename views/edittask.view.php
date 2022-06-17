@@ -15,87 +15,85 @@
     <title>Dashboard Sidebar Menu</title> 
 </head>
 <body class="dark">
-    <nav class="sidebar close">
-        <header>
-            <div class="image-text">
-                <span class="image">
-                    <img src="../../views/assets/img/unknown.png" alt="">
-                </span>
+<nav class="sidebar close">
+    <header>
+        <div class="image-text">
+            <span class="image">
+                <img src="../../views/assets/img/<?php echo $_SESSION['userimage'] ?>" alt="userpic">
+            </span>
 
-                <div class="text logo-text">
-                    <span class="name">Imrane Chaibi</span>
-                    <span class="profession">Web developer</span>
-                </div>
-            </div>
-
-            <i class='bx bx-chevron-right toggle'></i>
-        </header>
-
-        <div class="menu-bar">
-            <div class="menu">
-
-                <li class="search-box">
-                    <i class='bx bx-search icon'></i>
-                    <input type="text" placeholder="Search...">
-                </li>
-
-                <ul class="menu-links">
-                    <li class="nav-link">
-                        <a href="dashboard.html">
-                            <i class='bx bx-home-alt icon' ></i>
-                            <span class="text nav-text">Dashboard</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="revenue.html">
-                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
-                            <span class="text nav-text">Revenue</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="projects.html">
-                          <i class='bx bxs-briefcase-alt-2 icon'></i>
-                            <span class="text nav-text">Projects</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="#">
-                          <i class='bx bx-note icon' ></i>
-                            <span class="text nav-text">Notes</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="users.html">
-                          <i class='bx bxs-user icon'></i>
-                            <span class="text nav-text">Users</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="wallet.html">
-                            <i class='bx bx-wallet icon' ></i>
-                            <span class="text nav-text">Wallet</span>
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-
-            <div class="bottom-content">
-                <li class="">
-                    <a href="#">
-                        <i class='bx bx-log-out icon' ></i>
-                        <span class="text nav-text">Logout</span>
-                    </a>
-                </li>
+            <div class="text logo-text">
+                <span class="name"><?php echo $_SESSION['username'] ?></span>
+                <span class="profession"><?php echo $_SESSION['userrole'] ?></span>
             </div>
         </div>
 
-    </nav>
+        <i class='bx bx-chevron-right toggle'></i>
+    </header>
+
+    <div class="menu-bar">
+        <div class="menu">
+
+            <li class="search-box">
+                <i class='bx bx-search icon'></i>
+                <input type="text" placeholder="Search...">
+            </li>
+
+            <ul class="menu-links">
+                <li class="nav-link">
+                    <a href="../../dashboard">
+                        <i class='bx bx-home-alt icon' ></i>
+                        <span class="text nav-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a href="../../revenue">
+                        <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                        <span class="text nav-text">Revenue</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="../../projects">
+                      <i class='bx bxs-briefcase-alt-2 icon'></i>
+                        <span class="text nav-text">Projects</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="../../notes">
+                      <i class='bx bx-note icon' ></i>
+                        <span class="text nav-text">Notes</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="../../users">
+                      <i class='bx bxs-user icon'></i>
+                        <span class="text nav-text">Users</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                  <a href="../../code">
+                      <i class='bx bx-code-alt icon' ></i>
+                      <span class="text nav-text">Snippets</span>
+                  </a>
+              </li>
+            </ul>
+        </div>
+
+        <div class="bottom-content">
+            <li class="">
+                <a href="#">
+                    <i class='bx bx-log-out icon' ></i>
+                    <span class="text nav-text">Logout</span>
+                </a>
+            </li>
+        </div>
+    </div>
+
+</nav>
 
     <section class="home">
         <div class="text top-buttn">
