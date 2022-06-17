@@ -29,4 +29,16 @@ class note extends Model{
             return true;
         }
     }
+    // add a note with 2 parameters
+    public function addNote($notetitle, $notebody){
+        // sql query
+        $sql = "INSERT INTO notes (notename, notebody) VALUES ('$notetitle', '$notebody')";
+        // getting the result as a associative array
+        $result = $this->con->query($sql);
+        // if there is a result
+        if($result){
+            // returning the data
+            return true;
+        }
+    }
 }

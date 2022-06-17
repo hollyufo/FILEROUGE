@@ -23,4 +23,13 @@ class noteController extends controller{
         // redirecting to the notes page
         redirect("/notes");
     }
+    // adding a note with 2 parameters
+    public function addNote(){
+        // getting the data from the model
+        $model = new note();
+        // getting the data
+        $data = $model->addNote($_POST['notetitle'], $_POST['notebody']);
+        // redirecting to the notes page
+        redirect("/notes");
+    }
 }

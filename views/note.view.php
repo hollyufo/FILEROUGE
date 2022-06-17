@@ -132,7 +132,7 @@
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content bg-dark">
-                <div class="modal-header">
+                <div class="modl-heaader">
                   <h5 class="white" id="exampleModalLabel">ADD A Revenue</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -140,11 +140,11 @@
                   <form method="POST" class="">
                       <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label white">Title</label>
-                        <input type="text" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="title">
+                        <input type="text" name="notetitle" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="title">
                       </div>
                       <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label white">Body</label>
-                        <input type="text" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Body">
+                        <input type="text" name="notebody" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Body">
                       </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

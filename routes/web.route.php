@@ -101,6 +101,10 @@ Route::post('/revenue/edit-revenue',function(){
 Route::get('/notes',function(){
     return Route::controller("note","getNotes");
 });
+// route to add a note
+Route::post('/notes',function(){
+    return Route::controller("note","addNote");
+});
 // route to delete a note
 Route::get('/notes/delete/{id}',function($id){
     return Route::controller("note","deleteNote");
