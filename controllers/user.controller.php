@@ -50,12 +50,17 @@ class userController extends controller{
     }
     // displaying all the users from the model
     public function getAllUsers(){
-        $user = new user();
-        // getting all the invite codes from the model
-        $data['invitecodes']= $user->getAllInviteCode();
-
-        $data['users'] = $user->getAllUsers();
-        return $this->view("users", $data);
+        // checking the type of the user
+        if ($_SESSION['userrole'] == 'superadmin') {
+            $user = new user();
+            // getting all the invite codes from the model
+            $data['invitecodes']= $user->getAllInviteCode();
+            $data['users'] = $user->getAllUsers();
+            return $this->view("users", $data);
+        }else{
+            // retrun no acces view
+            return $this->view("noaccess");
+        }
     }
     // delete user
     public function deleteUser($id){

@@ -1,6 +1,3 @@
-<?php
-  
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -98,12 +95,12 @@
   </nav>
 
     <section class="home">
-        <div class="text">Dashboard Sidebar</div>
+        <div class="text">Dashboard</div>
         <div class="container-fluid ps-5 pe-5">
         <div class="row">
             <div class="col-sm-4 grid-margin">
               <div class="card dark-cards">
-                <a class="mylink22" href="./projects.html">
+                <a class="mylink22" href="./projects">
                   <div class="card-body">
                     <h5>Total Project</h5>
                     <div class="row">
@@ -123,7 +120,7 @@
             </div>
             <div class="col-sm-4 grid-margin">
               <div class="card dark-cards">
-                <a class="mylink22" href="./revenue.html">
+                <a class="mylink22" href="./revenue">
                   <div class="card-body">
                     <h5>Revenue</h5>
                     <div class="row">
@@ -143,7 +140,7 @@
             </div>
             <div class="col-sm-4 grid-margin">
               <div class="card dark-cards">
-                <a href="./users.html" class="mylink22">
+                <a href="./users" class="mylink22">
                   <div class="card-body">
                     <h5>Users</h5>
                     <div class="row">
@@ -163,7 +160,7 @@
             </div>
             <div class="col-sm-4 grid-margin">
               <div class="card dark-cards">
-                <a href="./code.html" class="mylink22">
+                <a href="./code" class="mylink22">
                   <div class="card-body">
                     <h5>Code Snipets</h5>
                     <div class="row">
@@ -183,7 +180,7 @@
             </div>
             <div class="col-sm-4 grid-margin">
               <div class="card dark-cards">
-                <a href="./note.html" class="mylink22">
+                <a href="./notes" class="mylink22">
                   <div class="card-body">
                     <h5>Notes</h5>
                     <div class="row">

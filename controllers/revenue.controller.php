@@ -7,7 +7,7 @@ require "./models/revenue.model.php";
 class revenueController extends controller{
    // getting all the revenue from the model
    public function revenue(){
-        if($_SESSION == 'superadmin'){
+        if($_SESSION['userrole'] == 'superadmin'){
             // calling the modal to get the revenue
             $revenue = new revenue();
             $data['revenue'] = $revenue->getRevnue();
