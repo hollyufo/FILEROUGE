@@ -81,6 +81,10 @@ Route::get('/projects/delete-task/{id}/{projectid}',function($id, $projectid){
 Route::get('/revenue',function(){
     return Route::controller("revenue","revenue");
 });
+// add revenue
+Route::post('/revenue',function(){
+    return Route::controller("revenue","addRevnue");
+});
 // deleting a revenue
 Route::get('/revenue/delete/{id}',function($id){
     return Route::controller("revenue","deleteRevnue");

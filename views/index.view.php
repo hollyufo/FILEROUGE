@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-
+<?php 
+    // cheking user session
+    if(!$_SESSION['loggedin']){
+        // redirect to login page
+        redirect('/login');
+    }
+?>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />

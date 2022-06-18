@@ -1,4 +1,10 @@
-<!-- Coding by CodingLab | www.codinglabweb.com -->
+<?php 
+    // cheking user session
+    if(!$_SESSION['loggedin']){
+        // redirect to login page
+        redirect('/login');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +18,7 @@
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     
-    <title>Dashboard Sidebar Menu</title> 
+    <title>Dashboard</title> 
 </head>
 <body class="dark">
 <nav class="sidebar close">
@@ -98,7 +104,7 @@
     <section class="home">
         <div class="text top-buttn">
             <span>Projects</span>
-            <button type="button" class="btn btn-dark border border-light" data-bs-toggle="modal" data-bs-target="#exampleModal">Launch demo modal</button>
+            <button type="button" class="btn btn-dark border border-light" data-bs-toggle="modal" data-bs-target="#exampleModal">ADD a project</button>
         </div>
         <div class="container-fluid ps-5 pe-5">
             <div class="row row-cols-1 row-cols-md-3 g-4">

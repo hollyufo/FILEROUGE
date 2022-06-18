@@ -1,3 +1,10 @@
+<?php 
+    // cheking user session
+    if(!$_SESSION['loggedin']){
+        // redirect to login page
+        redirect('/login');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +18,7 @@
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     
-    <title>Dashboard Sidebar Menu</title> 
+    <title>Dashboard</title> 
 </head>
 <body class="dark">
 <nav class="sidebar close">
@@ -144,24 +151,26 @@
                   <form method="POST" class="">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label white">Project</label>
-                        <select class="form-select bg-dark white" aria-label="Default select example">
+                        <select name="project" class="form-select bg-dark white" aria-label="Default select example">
                             <option selected disabled>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <?php
+                                foreach ($data['projects'] as $value) {
+                                    echo "<option value='".$value['projectid']."'>".$value['name']."</option>";
+                                }
+                            ?>
                           </select>
                       </div>
                       <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label white">Revenue</label>
-                        <input type="text" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Revenue">
+                        <input name="allrevenue" type="text" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Revenue">
                       </div>
                       <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label white">Personal Revenue</label>
-                        <input type="text" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Personal amount">
+                        <input name="personalrevenue" type="text" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Personal amount">
                       </div>
                       <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label white">Date of payment</label>
-                        <input type="date" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="date of payment">
+                        <input name="datefopayment" type="date" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="date of payment">
                       </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

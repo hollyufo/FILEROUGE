@@ -1,6 +1,10 @@
 <?php 
-    $code = $data['0'];
-    var_dump($code);
+    $code = $data['0']; 
+    // cheking user session
+    if(!$_SESSION['loggedin']){
+        // redirect to login page
+        redirect('/login');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,12 +26,12 @@
     <header>
         <div class="image-text">
             <span class="image">
-                <img src="logo.png" alt="userpic">
+                <img src="../views/assets/img/<?php echo $_SESSION['userimage'] ?>" alt="userpic">
             </span>
 
             <div class="text logo-text">
-                <span class="name">Imrane Chaibi</span>
-                <span class="profession">Web developer</span>
+                <span class="name"><?php echo $_SESSION['username'] ?></span>
+                <span class="profession"><?php echo $_SESSION['userrole'] ?></span>
             </div>
         </div>
 
@@ -84,14 +88,6 @@
                       <span class="text nav-text">Snippets</span>
                   </a>
               </li>
-
-                <li class="nav-link">
-                    <a href="wallet.html">
-                        <i class='bx bx-wallet icon' ></i>
-                        <span class="text nav-text">Wallet</span>
-                    </a>
-                </li>
-
             </ul>
         </div>
 
@@ -126,7 +122,7 @@
         </div>
     </section>
 
-    <script src="./assets/js/dashboard.js"></script>
+    <script src="../views/assets/js/dashboard.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>

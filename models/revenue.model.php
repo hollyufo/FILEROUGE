@@ -68,4 +68,16 @@ class revenue extends Model{
             return true;
         }
     }
+    // adding a revenue to db 
+    public function addRevnue($project, $personalrevenue, $datefopayment, $allrevenue){
+        // sql query
+        $sql = "INSERT INTO revenue (project, personalrevenue, datefopayment, allrevenue) VALUES ('$project', '$personalrevenue', '$datefopayment', '$allrevenue')";
+        // getting the result as a associative array
+        $result = $this->con->query($sql);
+        // if there is a result
+        if($result){
+            // returning the data
+            return true;
+        }
+    }
 }

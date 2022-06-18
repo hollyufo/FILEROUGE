@@ -1,6 +1,18 @@
+<?php 
+    // cheking user session
+    if(!$_SESSION['loggedin']){
+        // redirect to login page
+        redirect('/login');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        .col {
+                min-width: 220px;
+            }
+    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +23,7 @@
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     
-    <title>Dashboard Sidebar Menu</title> 
+    <title>Dashboard</title> 
 </head>
 <body class="dark">
 <nav class="sidebar close">
@@ -84,7 +96,7 @@
 
         <div class="bottom-content">
             <li class="">
-                <a href="#">
+                <a href="./logout">
                     <i class='bx bx-log-out icon' ></i>
                     <span class="text nav-text">Logout</span>
                 </a>
@@ -155,7 +167,7 @@
                   </div>
                 </div>
             </div>
-    <script src="./assets/js/dashboard.js"></script>
+    <script src="./views/assets/js/dashboard.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>

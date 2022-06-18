@@ -1,5 +1,10 @@
 <?php 
-    $note = $data['0'];
+    $note = $data['0']; 
+    // cheking user session
+    if(!$_SESSION['loggedin']){
+        // redirect to login page
+        redirect('/login');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
