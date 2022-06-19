@@ -181,18 +181,20 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form method="POST" class="" action="./add">
+              <form id="form" method="POST" class="" action="./add">
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label white">Task Name</label>
-                  <input type="text" class="form-control white bg-dark" name="taskname" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Task name...">
+                  <input type="text" id="taskname" class="form-control white bg-dark" name="taskname" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Task name...">
+                  <p class="not-valid" class="not-valid" id ="error_title"></p>
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label white">Explanation</label>
-                  <input type="text" name="explanation" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
+                  <input type="text" id="explanation" name="explanation" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
+                  <p class="not-valid" class="not-valid" id ="error_explanation"></p>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label white">status</label>
-                    <select class="form-select bg-dark white" name="status" aria-label="Default select example">
+                    <select id="status" class="form-select bg-dark white" name="status" aria-label="Default select example">
                         <option selected disabled>Open this select menu</option>
                         <option value="To do">To do</option>
                         <option value="Doing">Doing</option>
@@ -201,7 +203,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label white">Asigned to</label>
-                    <select class="form-select bg-dark white" name="asignedto" aria-label="Default select example">
+                    <select id="users" class="form-select bg-dark white" name="asignedto" aria-label="Default select example">
                         <option selected disabled>Open this select menu</option>
                         <?php 
                           foreach ($data['users'] as $user) {
@@ -212,11 +214,11 @@
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label white">Date of start</label>
-                    <input type="date" name="startdate" class="white form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
+                    <input id="date1" type="date" name="startdate" class="white form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label white">Date of end</label>
-                    <input type="date" name="enddate" class="white form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
+                    <input id="date2" type="date" name="enddate" class="white form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Explanation">
                   </div>
                   <input type="text" name="project" hidden value=<?php echo $data['0']['projectid']; ?>>
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -227,6 +229,7 @@
         </div>
     </div>
     <script src="../views/assets/js/dashboard.js"></script>
+    <script src="../views/assets/js/task.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>

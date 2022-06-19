@@ -179,10 +179,10 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <form method="POST" class="">
+                  <form id="codes" method="POST" class="">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label white">User type</label>
-                        <select name="type" class="form-select bg-dark white" aria-label="Default select example">
+                        <select id="selecte" name="type" class="form-select bg-dark white" aria-label="Default select example" required>
                             <option selected disabled>Open this select menu</option>
                             <option value="user">user</option>
                             <option value="superadmin">superadmin</option>
@@ -190,7 +190,8 @@
                       </div>
                       <div class="mb-3">
                         <label name="code" for="exampleInputEmail1" class="form-label white">code</label>
-                        <input name="code" type="text" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="invite code">
+                        <input name="code" id="invitecode" type="text" class="form-control white bg-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="invite code">
+                        <p class="not-valid" class="not-valid" id ="error_code"></p>
                       </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -200,6 +201,7 @@
             </div>
         </div>
     <script src="./views/assets/js/dashboard.js"></script>
+    <script src="./views/assets/js/user.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>
