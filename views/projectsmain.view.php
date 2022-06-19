@@ -143,18 +143,20 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form method="POST" class="" enctype="multipart/form-data">
+          <form id="addproject" method="POST" class="" enctype="multipart/form-data">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label white">Project Name</label>
-              <input type="text" class="form-control white bg-dark" id="exampleInputEmail1" name="ProjectName" aria-describedby="emailHelp" placeholder="Project name...">
+              <input type="text" id="pname" class="form-control white bg-dark" id="exampleInputEmail1" name="ProjectName" aria-describedby="emailHelp" placeholder="Project name...">
+              <p class="not-valid" class="not-valid" id ="error_name"></p>
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label white">Project Description</label>
-              <input type="text" class="form-control white bg-dark" name="description" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Project Description...">
+              <input type="text" id="description" class="form-control white bg-dark" name="description" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Project Description...">
+              <p class="not-valid" class="not-valid" id ="error_description"></p>
             </div>
             <div class="mb-3">
               <label for="formFile" class="form-label white">upload a picture</label>
-              <input class="form-control bg-dark" type="file" name="fileToUpload" id="fileToUpload">
+              <input class="form-control bg-dark" type="file" name="fileToUpload" id="fileToUpload" required>
             </div>
             <button type="submit" name="submit" class="btn btn-primary">Submit</button>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -164,6 +166,7 @@
     </div>
 </div>
     <script src="./views/assets/js/dashboard.js"></script>
+    <script src="./views/assets/js/addproject.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>

@@ -430,3 +430,6 @@ input::placeholder {
     padding: 20px 80px 20px 70px;
     border-radius: 15px;
 }
+.not-valid{
+  color: #D8000C;
+}

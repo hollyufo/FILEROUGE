@@ -388,3 +388,6 @@ a {
 .exp{
     margin: 0 0 20px 0px;
 }
+.not-valid{
+    color: #D8000C;
+}

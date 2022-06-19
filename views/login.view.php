@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png">
     <link rel="manifest" href="./views/assets/img/site.webmanifest">
-</head>
+   </head>
 <body>
 <!-- partial:index.partial.html -->
 <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
@@ -50,14 +50,16 @@
       
       <div class="user_options-forms" id="user_options-forms">
         <div class="user_forms-login">
-          <h2 class="forms_title">Login</h2>
-          <form class="forms_form" action="" method="post">
+          <h2 id="title" class="forms_title">Login</h2>
+          <form id="login" class="forms_form" action="" method="post">
             
               <div class="forms_field">
-                <input type="email" placeholder="Email" name="email" class="forms_field-input" required autofocus />
+                <p id="error" class="not-valid" ></p>
+                <input id="Email" type="email" placeholder="Email" name="email" class="forms_field-input"  autofocus />
               </div>
               <div class="forms_field">
-                <input type="password" placeholder="Password" name="password" class="forms_field-input" required />
+                <p id="error_message" class="not-valid" ></p>
+                <input id="password" type="password" placeholder="Password" name="password" class="forms_field-input"  />
               </div>
             
             <div class="forms_buttons">
@@ -68,20 +70,25 @@
         </div>
         <div class="user_forms-signup">
           <h2 class="forms_title">Sign Up</h2>
-          <form class="forms_form" method="post" action="./signup">
+          <form id="signup" class="forms_form" method="post" action="./signup">
               <div class="forms_field">
-                <input type="text" placeholder="invite number" name="code" class="forms_field-input" required />
+                <p id="error_code" class="not-valid" ></p>
+                <input type="text" id="invite" placeholder="invite number" name="code" class="forms_field-input"  />
               </div>
               <div class="forms_field">
-                <input type="text" placeholder="Full Name" name="fullname" class="forms_field-input" required />
+                <p id="error_name" class="not-valid" ></p>
+                <input type="text" id="name" placeholder="Full Name" name="fullname" class="forms_field-input"  />
               </div>
               <div class="forms_field">
-                <input type="email" placeholder="Email" name="email" class="forms_field-input" required />
+                <p id="serror_email" class="not-valid" ></p>
+                <input type="email" id="semail" placeholder="Email" name="email" class="forms_field-input"  />
               </div>
               <div class="forms_field">
-                <input type="password" placeholder="Password" name="password" class="forms_field-input" required />
+                <p id="serror_password" class="not-valid" ></p>
+                <input type="password" id="spassword" placeholder="Password" name="password" class="forms_field-input"  />
               </div>
             <div class="forms_buttons">
+              
               <input type="submit" value="Sign up" class="forms_buttons-action">
             </div>
           </form>
@@ -91,6 +98,8 @@
   </section>
 </div>
 <!-- partial -->
+<script src="./views/assets/js/login.js"></script>
+<script src="./views/assets/js/signup.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./views/assets/js/script.js"></script>
 
 </body>
