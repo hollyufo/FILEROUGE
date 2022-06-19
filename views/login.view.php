@@ -1,3 +1,10 @@
+<?php
+  // cheking user session
+  if($_SESSION['loggedin']){
+    // redirect to login page
+    redirect('/dashboard');
+  }
+?>
 <!DOCTYPE html>
 <html lang="en" >
 <head>
