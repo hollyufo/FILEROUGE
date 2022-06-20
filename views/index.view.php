@@ -1,11 +1,4 @@
 <!DOCTYPE html>
-<?php 
-    // cheking user session
-    if(!$_SESSION['loggedin']){
-        // redirect to login page
-        redirect('/login');
-    }
-?>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -231,7 +224,7 @@
                 al majazer market  needed a website to present itself as a new modern way, and also help promote its products to attract more customers and businesses.
               </p>
               <a
-                href="./project-1.html"
+                href="./almajazer"
                 class="btn btn--med btn--theme dynamicBgClr"
                 >Case Study</a
               >
@@ -252,7 +245,7 @@
                 VPV software company wanted a way to present itself to the world
               </p>
               <a
-                href="./project-2.html"
+                href="./vpv"
                 class="btn btn--med btn--theme dynamicBgClr"
                 >Case Study</a
               >
@@ -273,7 +266,7 @@
                 al majaz needs a website where it can sell and have special offers with different payment methods
               </p>
               <a
-                href="./project-3.html"
+                href="./shop-almajazer"
                 class="btn btn--med btn--theme dynamicBgClr"
                 >Case Study</a
               >

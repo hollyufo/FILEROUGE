@@ -24,11 +24,11 @@ svg {
   left: 50%;
   margin-top: -100px;
   margin-left: 50px;
-  /* color: #FFF; */
   font-family: Roboto;
   font-weight: 300;
 }
 .message-box h1 {
+  color: white;
   font-size: 60px;
   line-height: 46px;
   margin-bottom: 40px;
@@ -90,6 +90,9 @@ svg {
     text-align: center;
   }
 }
+.white{
+  color: white;
+}
     </style>
 </head>
 <body>
@@ -105,7 +108,7 @@ svg {
 </svg>
 <div class="message-box">
   <h1>404</h1>
-  <p>This Page not found</p>
+  <p class="white">This Page not found</p>
   <div class="buttons-con">
     <div class="action-link-wrap">
       <a onclick="history.back(-1)" class="link-button link-back-button">Go Back</a>

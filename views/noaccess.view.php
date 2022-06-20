@@ -39,6 +39,7 @@ svg {
   font-size: 60px;
   line-height: 46px;
   margin-bottom: 40px;
+  color: #FFF;
 }
 .buttons-con .action-link-wrap {
   margin-top: 40px;
@@ -97,6 +98,9 @@ svg {
     text-align: center;
   }
 }
+.white{
+  color: #fff;
+}
     </style>
 </head>
 <body>
@@ -112,7 +116,7 @@ svg {
 </svg>
 <div class="message-box">
   <h1>You dont have the rights to access this page</h1>
-  <p>access forbidden</p>
+  <p class="white">access forbidden</p>
   <div class="buttons-con">
     <div class="action-link-wrap">
       <a onclick="history.back(-1)" class="link-button link-back-button">Go Back</a>
