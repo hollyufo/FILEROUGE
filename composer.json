@@ -1,11 +1,11 @@
 {
-    "name": "youcode/mvc_template_master",
-    "description": "MVC template master",
+    "name": "mvc_template_master",
+    "description": "MVC template",
     "type": "mvctemplatemaster",
     "authors": [
         {
-            "name": "abdelaziz bardich",
-            "email": "abdelazizbardich@gmail.com"
+            "name": "imrane chaibi",
+            "email": "chaibi1imrane@gmail.com"
         }
     ],
     "require": {
